@@ -1,0 +1,19 @@
+sources:
+  - ./Domain
+  - ./DomainTests
+  - ./Platform
+  - ./PlatformTests
+templates:
+  - ./Pods/SwiftyMocky/Sources/Templates
+output:
+  ./DomainTests
+args:
+  testable:
+    - Domain
+    - Platform
+  import:
+  excludedSwiftLintRules:
+    - force_cast
+    - function_body_length
+    - line_length
+    - vertical_whitespace

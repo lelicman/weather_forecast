@@ -1,0 +1,109 @@
+import Platform
+import UIKit
+
+class CityListViewController: BaseViewController {
+  var viewModel: CityListViewModel!
+
+  @IBOutlet var loadingView: UIView!
+  @IBOutlet var tableView: UITableView!
+  @IBOutlet var searchBar: UISearchBar!
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+
+    configureBindings()
+    configureUI()
+    viewModel.postInitialActions()
+    viewModel.load()
+  }
+
+  deinit {
+    viewModel.unbind(self)
+  }
+
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+  }
+}
+
+private extension CityListViewController {
+  func configureBindings() {
+    viewModel.bind(self) { [weak self] action in
+      guard let self = self else { return }
+
+      switch action {
+      case .isLoading(let isLoading):
+        self.loadingView.isHidden = !isLoading
+      case .itemSelected:
+        break
+      case .itemsUpdated:
+        self.tableView.reloadData()
+      }
+    }
+  }
+
+  func configureUI() {
+    configureTableView()
+    configureNavigationBar()
+    configureSearchBar()
+  }
+
+  func configureTableView() {
+    tableView.register(cell: CityCell.self)
+    tableView.delegate = self
+    tableView.dataSource = self
+  }
+
+  func configureSearchBar() {
+    searchBar.delegate = self
+  }
+
+  func configureNavigationBar() {
+    navigationItem.title = NSLocalizedString("Cities", comment: "")
+  }
+}
+
+extension CityListViewController: UITableViewDataSource {
+  func numberOfSections(in tableView: UITableView) -> Int {
+    return 1
+  }
+
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return viewModel.filteredItems.count
+  }
+
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: CityCell.identifier()) as? CityCell,
+    let model = viewModel.filteredItems[safe: indexPath.row]else {
+      preconditionFailure()
+    }
+
+    cell.update(with: model)
+    return cell
+  }
+}
+
+extension CityListViewController: UITableViewDelegate {
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    guard let model = viewModel.filteredItems[safe: indexPath.row] else {
+      preconditionFailure()
+    }
+
+    tableView.deselectRow(at: indexPath, animated: true)
+    viewModel.select(item: model)
+  }
+}
+
+extension CityListViewController: UISearchBarDelegate {
+  func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    viewModel.search(by: searchText)
+  }
+
+  func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+    searchBar.resignFirstResponder()
+  }
+
+  func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+    searchBar.resignFirstResponder()
+  }
+}

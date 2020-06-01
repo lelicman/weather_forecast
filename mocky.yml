@@ -1,0 +1,19 @@
+sources:
+  - ./WeatherForecast
+  - ./WeatherForecastTests
+  - ./Domain
+  - ./DomainTests
+templates:
+  - ./Pods/SwiftyMocky/Sources/Templates
+output:
+  ./WeatherForecastTests
+args:
+  testable:
+    - WeatherForecast
+    - Domain
+  import:
+  excludedSwiftLintRules:
+    - force_cast
+    - function_body_length
+    - line_length
+    - vertical_whitespace
