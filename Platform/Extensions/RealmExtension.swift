@@ -1,7 +1,7 @@
 import RealmSwift
 
 extension Realm {
-    func writeAsync<T: ThreadConfined>(obj: T, errorHandler: @escaping ((_ error : Swift.Error) -> Void) = { _ in return }, block: @escaping ((Realm, T?) -> Void)) {
+    func writeAsync<T: ThreadConfined>(obj: T, errorHandler: @escaping ((_ error: Swift.Error) -> Void) = { _ in return }, block: @escaping ((Realm, T?) -> Void)) {
         let wrappedObj = ThreadSafeReference(to: obj)
         let config = self.configuration
         DispatchQueue(label: "background").async {
