@@ -27,9 +27,9 @@ class SplashViewModelSpecs: QuickSpec {
           waitUntil { done in
             sut.bind(self) { action in
               switch action {
-              case .isLoading(let isLoading):
+              case SplashViewModelAction.isLoading(let isLoading):
                 loadingStates.append(isLoading)
-              case .completed:
+              case SplashViewModelAction.completed:
                 done()
               default:
                 break
@@ -60,9 +60,9 @@ class SplashViewModelSpecs: QuickSpec {
             waitUntil { done in
               sut.bind(self) { action in
                 switch action {
-                case .completed:
+                case SplashViewModelAction.completed:
                   done()
-                case .isLoading(let isLoading):
+                case SplashViewModelAction.isLoading(let isLoading):
                   latestLoadingState = isLoading
                 default:
                   break
@@ -78,7 +78,7 @@ class SplashViewModelSpecs: QuickSpec {
             waitUntil { done in
               sut.bind(self) { action in
                 switch action {
-                case .completed:
+                case SplashViewModelAction.completed:
                   isCompleted = true
                   done()
                 default:
@@ -109,9 +109,9 @@ class SplashViewModelSpecs: QuickSpec {
             waitUntil { done in
               sut.bind(self) { action in
                 switch action {
-                case .showError:
+                case SplashViewModelAction.showError:
                   done()
-                case .isLoading(let isLoading):
+                case SplashViewModelAction.isLoading(let isLoading):
                   latestLoadingState = isLoading
                 default:
                   break
@@ -127,7 +127,7 @@ class SplashViewModelSpecs: QuickSpec {
             waitUntil { done in
               sut.bind(self) { action in
                 switch action {
-                case .showError(let error):
+                case SplashViewModelAction.showError(let error):
                   isCompleted = true
                   receivedError = error
                   done()
@@ -151,7 +151,7 @@ class SplashViewModelSpecs: QuickSpec {
           waitUntil { done in
             sut.bind(self) { action in
               switch action {
-              case .isLoading(let isLoading):
+              case SplashViewModelAction.isLoading(let isLoading):
                 expect(isLoading) == false
                 done()
               default:

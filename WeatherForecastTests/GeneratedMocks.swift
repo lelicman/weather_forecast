@@ -1031,3 +1031,1407 @@ import Foundation
     }
     
 }
+
+
+// MARK: - Mocks generated from file: WeatherForecast/CoordinatorProviders/WeatherForecast.SplashCoordinatorProvider.swift
+
+import Cuckoo
+@testable import WeatherForecast
+
+import Domain
+import Foundation
+
+
+ class MockSplashCoordinatorProviderType: SplashCoordinatorProviderType, Cuckoo.ProtocolMock {
+    
+     typealias MocksType = SplashCoordinatorProviderType
+    
+     typealias Stubbing = __StubbingProxy_SplashCoordinatorProviderType
+     typealias Verification = __VerificationProxy_SplashCoordinatorProviderType
+
+     let cuckoo_manager = Cuckoo.MockManager.preconfiguredManager ?? Cuckoo.MockManager(hasParent: false)
+
+    
+    private var __defaultImplStub: SplashCoordinatorProviderType?
+
+     func enableDefaultImplementation(_ stub: SplashCoordinatorProviderType) {
+        __defaultImplStub = stub
+        cuckoo_manager.enableDefaultStubImplementation()
+    }
+    
+
+    
+
+    
+
+    
+    
+    
+     func makeViewModel() -> SplashViewModelType {
+        
+    return cuckoo_manager.call("makeViewModel() -> SplashViewModelType",
+            parameters: (),
+            escapingParameters: (),
+            superclassCall:
+                
+                Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                ,
+            defaultCall: __defaultImplStub!.makeViewModel())
+        
+    }
+    
+    
+    
+     func makeViewController(viewModel: SplashViewModelType) -> SplashViewController {
+        
+    return cuckoo_manager.call("makeViewController(viewModel: SplashViewModelType) -> SplashViewController",
+            parameters: (viewModel),
+            escapingParameters: (viewModel),
+            superclassCall:
+                
+                Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                ,
+            defaultCall: __defaultImplStub!.makeViewController(viewModel: viewModel))
+        
+    }
+    
+
+	 struct __StubbingProxy_SplashCoordinatorProviderType: Cuckoo.StubbingProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	
+	     init(manager: Cuckoo.MockManager) {
+	        self.cuckoo_manager = manager
+	    }
+	    
+	    
+	    func makeViewModel() -> Cuckoo.ProtocolStubFunction<(), SplashViewModelType> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return .init(stub: cuckoo_manager.createStub(for: MockSplashCoordinatorProviderType.self, method: "makeViewModel() -> SplashViewModelType", parameterMatchers: matchers))
+	    }
+	    
+	    func makeViewController<M1: Cuckoo.Matchable>(viewModel: M1) -> Cuckoo.ProtocolStubFunction<(SplashViewModelType), SplashViewController> where M1.MatchedType == SplashViewModelType {
+	        let matchers: [Cuckoo.ParameterMatcher<(SplashViewModelType)>] = [wrap(matchable: viewModel) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockSplashCoordinatorProviderType.self, method: "makeViewController(viewModel: SplashViewModelType) -> SplashViewController", parameterMatchers: matchers))
+	    }
+	    
+	}
+
+	 struct __VerificationProxy_SplashCoordinatorProviderType: Cuckoo.VerificationProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	    private let callMatcher: Cuckoo.CallMatcher
+	    private let sourceLocation: Cuckoo.SourceLocation
+	
+	     init(manager: Cuckoo.MockManager, callMatcher: Cuckoo.CallMatcher, sourceLocation: Cuckoo.SourceLocation) {
+	        self.cuckoo_manager = manager
+	        self.callMatcher = callMatcher
+	        self.sourceLocation = sourceLocation
+	    }
+	
+	    
+	
+	    
+	    @discardableResult
+	    func makeViewModel() -> Cuckoo.__DoNotUse<(), SplashViewModelType> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return cuckoo_manager.verify("makeViewModel() -> SplashViewModelType", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func makeViewController<M1: Cuckoo.Matchable>(viewModel: M1) -> Cuckoo.__DoNotUse<(SplashViewModelType), SplashViewController> where M1.MatchedType == SplashViewModelType {
+	        let matchers: [Cuckoo.ParameterMatcher<(SplashViewModelType)>] = [wrap(matchable: viewModel) { $0 }]
+	        return cuckoo_manager.verify("makeViewController(viewModel: SplashViewModelType) -> SplashViewController", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	}
+}
+
+ class SplashCoordinatorProviderTypeStub: SplashCoordinatorProviderType {
+    
+
+    
+
+    
+     func makeViewModel() -> SplashViewModelType  {
+        return DefaultValueRegistry.defaultValue(for: (SplashViewModelType).self)
+    }
+    
+     func makeViewController(viewModel: SplashViewModelType) -> SplashViewController  {
+        return DefaultValueRegistry.defaultValue(for: (SplashViewController).self)
+    }
+    
+}
+
+
+
+ class MockSplashCoordinatorProvider: WeatherForecast.SplashCoordinatorProvider, Cuckoo.ClassMock {
+    
+     typealias MocksType = WeatherForecast.SplashCoordinatorProvider
+    
+     typealias Stubbing = __StubbingProxy_SplashCoordinatorProvider
+     typealias Verification = __VerificationProxy_SplashCoordinatorProvider
+
+     let cuckoo_manager = Cuckoo.MockManager.preconfiguredManager ?? Cuckoo.MockManager(hasParent: true)
+
+    
+    private var __defaultImplStub: WeatherForecast.SplashCoordinatorProvider?
+
+     func enableDefaultImplementation(_ stub: WeatherForecast.SplashCoordinatorProvider) {
+        __defaultImplStub = stub
+        cuckoo_manager.enableDefaultStubImplementation()
+    }
+    
+
+    
+
+    
+
+    
+    
+    
+     override func makeViewModel() -> SplashViewModelType {
+        
+    return cuckoo_manager.call("makeViewModel() -> SplashViewModelType",
+            parameters: (),
+            escapingParameters: (),
+            superclassCall:
+                
+                super.makeViewModel()
+                ,
+            defaultCall: __defaultImplStub!.makeViewModel())
+        
+    }
+    
+    
+    
+     override func makeViewController(viewModel: SplashViewModelType) -> SplashViewController {
+        
+    return cuckoo_manager.call("makeViewController(viewModel: SplashViewModelType) -> SplashViewController",
+            parameters: (viewModel),
+            escapingParameters: (viewModel),
+            superclassCall:
+                
+                super.makeViewController(viewModel: viewModel)
+                ,
+            defaultCall: __defaultImplStub!.makeViewController(viewModel: viewModel))
+        
+    }
+    
+
+	 struct __StubbingProxy_SplashCoordinatorProvider: Cuckoo.StubbingProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	
+	     init(manager: Cuckoo.MockManager) {
+	        self.cuckoo_manager = manager
+	    }
+	    
+	    
+	    func makeViewModel() -> Cuckoo.ClassStubFunction<(), SplashViewModelType> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return .init(stub: cuckoo_manager.createStub(for: MockSplashCoordinatorProvider.self, method: "makeViewModel() -> SplashViewModelType", parameterMatchers: matchers))
+	    }
+	    
+	    func makeViewController<M1: Cuckoo.Matchable>(viewModel: M1) -> Cuckoo.ClassStubFunction<(SplashViewModelType), SplashViewController> where M1.MatchedType == SplashViewModelType {
+	        let matchers: [Cuckoo.ParameterMatcher<(SplashViewModelType)>] = [wrap(matchable: viewModel) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockSplashCoordinatorProvider.self, method: "makeViewController(viewModel: SplashViewModelType) -> SplashViewController", parameterMatchers: matchers))
+	    }
+	    
+	}
+
+	 struct __VerificationProxy_SplashCoordinatorProvider: Cuckoo.VerificationProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	    private let callMatcher: Cuckoo.CallMatcher
+	    private let sourceLocation: Cuckoo.SourceLocation
+	
+	     init(manager: Cuckoo.MockManager, callMatcher: Cuckoo.CallMatcher, sourceLocation: Cuckoo.SourceLocation) {
+	        self.cuckoo_manager = manager
+	        self.callMatcher = callMatcher
+	        self.sourceLocation = sourceLocation
+	    }
+	
+	    
+	
+	    
+	    @discardableResult
+	    func makeViewModel() -> Cuckoo.__DoNotUse<(), SplashViewModelType> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return cuckoo_manager.verify("makeViewModel() -> SplashViewModelType", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func makeViewController<M1: Cuckoo.Matchable>(viewModel: M1) -> Cuckoo.__DoNotUse<(SplashViewModelType), SplashViewController> where M1.MatchedType == SplashViewModelType {
+	        let matchers: [Cuckoo.ParameterMatcher<(SplashViewModelType)>] = [wrap(matchable: viewModel) { $0 }]
+	        return cuckoo_manager.verify("makeViewController(viewModel: SplashViewModelType) -> SplashViewController", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	}
+}
+
+ class SplashCoordinatorProviderStub: WeatherForecast.SplashCoordinatorProvider {
+    
+
+    
+
+    
+     override func makeViewModel() -> SplashViewModelType  {
+        return DefaultValueRegistry.defaultValue(for: (SplashViewModelType).self)
+    }
+    
+     override func makeViewController(viewModel: SplashViewModelType) -> SplashViewController  {
+        return DefaultValueRegistry.defaultValue(for: (SplashViewController).self)
+    }
+    
+}
+
+
+// MARK: - Mocks generated from file: WeatherForecast/Coordinators/WeatherForecast.SplashCoordinator.swift
+
+import Cuckoo
+@testable import WeatherForecast
+
+import Domain
+import Foundation
+
+
+ class MockSplashCoordinatorDelegate: SplashCoordinatorDelegate, Cuckoo.ProtocolMock {
+    
+     typealias MocksType = SplashCoordinatorDelegate
+    
+     typealias Stubbing = __StubbingProxy_SplashCoordinatorDelegate
+     typealias Verification = __VerificationProxy_SplashCoordinatorDelegate
+
+     let cuckoo_manager = Cuckoo.MockManager.preconfiguredManager ?? Cuckoo.MockManager(hasParent: false)
+
+    
+    private var __defaultImplStub: SplashCoordinatorDelegate?
+
+     func enableDefaultImplementation(_ stub: SplashCoordinatorDelegate) {
+        __defaultImplStub = stub
+        cuckoo_manager.enableDefaultStubImplementation()
+    }
+    
+
+    
+
+    
+
+    
+    
+    
+     func splashCoordinatorCompleted(coordinator: WeatherForecast.SplashCoordinator)  {
+        
+    return cuckoo_manager.call("splashCoordinatorCompleted(coordinator: WeatherForecast.SplashCoordinator)",
+            parameters: (coordinator),
+            escapingParameters: (coordinator),
+            superclassCall:
+                
+                Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                ,
+            defaultCall: __defaultImplStub!.splashCoordinatorCompleted(coordinator: coordinator))
+        
+    }
+    
+
+	 struct __StubbingProxy_SplashCoordinatorDelegate: Cuckoo.StubbingProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	
+	     init(manager: Cuckoo.MockManager) {
+	        self.cuckoo_manager = manager
+	    }
+	    
+	    
+	    func splashCoordinatorCompleted<M1: Cuckoo.Matchable>(coordinator: M1) -> Cuckoo.ProtocolStubNoReturnFunction<(WeatherForecast.SplashCoordinator)> where M1.MatchedType == WeatherForecast.SplashCoordinator {
+	        let matchers: [Cuckoo.ParameterMatcher<(WeatherForecast.SplashCoordinator)>] = [wrap(matchable: coordinator) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockSplashCoordinatorDelegate.self, method: "splashCoordinatorCompleted(coordinator: WeatherForecast.SplashCoordinator)", parameterMatchers: matchers))
+	    }
+	    
+	}
+
+	 struct __VerificationProxy_SplashCoordinatorDelegate: Cuckoo.VerificationProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	    private let callMatcher: Cuckoo.CallMatcher
+	    private let sourceLocation: Cuckoo.SourceLocation
+	
+	     init(manager: Cuckoo.MockManager, callMatcher: Cuckoo.CallMatcher, sourceLocation: Cuckoo.SourceLocation) {
+	        self.cuckoo_manager = manager
+	        self.callMatcher = callMatcher
+	        self.sourceLocation = sourceLocation
+	    }
+	
+	    
+	
+	    
+	    @discardableResult
+	    func splashCoordinatorCompleted<M1: Cuckoo.Matchable>(coordinator: M1) -> Cuckoo.__DoNotUse<(WeatherForecast.SplashCoordinator), Void> where M1.MatchedType == WeatherForecast.SplashCoordinator {
+	        let matchers: [Cuckoo.ParameterMatcher<(WeatherForecast.SplashCoordinator)>] = [wrap(matchable: coordinator) { $0 }]
+	        return cuckoo_manager.verify("splashCoordinatorCompleted(coordinator: WeatherForecast.SplashCoordinator)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	}
+}
+
+ class SplashCoordinatorDelegateStub: SplashCoordinatorDelegate {
+    
+
+    
+
+    
+     func splashCoordinatorCompleted(coordinator: WeatherForecast.SplashCoordinator)   {
+        return DefaultValueRegistry.defaultValue(for: (Void).self)
+    }
+    
+}
+
+
+
+ class MockSplashCoordinator: WeatherForecast.SplashCoordinator, Cuckoo.ClassMock {
+    
+     typealias MocksType = WeatherForecast.SplashCoordinator
+    
+     typealias Stubbing = __StubbingProxy_SplashCoordinator
+     typealias Verification = __VerificationProxy_SplashCoordinator
+
+     let cuckoo_manager = Cuckoo.MockManager.preconfiguredManager ?? Cuckoo.MockManager(hasParent: true)
+
+    
+    private var __defaultImplStub: WeatherForecast.SplashCoordinator?
+
+     func enableDefaultImplementation(_ stub: WeatherForecast.SplashCoordinator) {
+        __defaultImplStub = stub
+        cuckoo_manager.enableDefaultStubImplementation()
+    }
+    
+
+    
+    
+    
+     override var delegate: Delegate? {
+        get {
+            return cuckoo_manager.getter("delegate",
+                superclassCall:
+                    
+                    super.delegate
+                    ,
+                defaultCall: __defaultImplStub!.delegate)
+        }
+        
+        set {
+            cuckoo_manager.setter("delegate",
+                value: newValue,
+                superclassCall:
+                    
+                    super.delegate = newValue
+                    ,
+                defaultCall: __defaultImplStub!.delegate = newValue)
+        }
+        
+    }
+    
+
+    
+
+    
+    
+    
+     override func start()  {
+        
+    return cuckoo_manager.call("start()",
+            parameters: (),
+            escapingParameters: (),
+            superclassCall:
+                
+                super.start()
+                ,
+            defaultCall: __defaultImplStub!.start())
+        
+    }
+    
+
+	 struct __StubbingProxy_SplashCoordinator: Cuckoo.StubbingProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	
+	     init(manager: Cuckoo.MockManager) {
+	        self.cuckoo_manager = manager
+	    }
+	    
+	    
+	    var delegate: Cuckoo.ClassToBeStubbedOptionalProperty<MockSplashCoordinator, Delegate> {
+	        return .init(manager: cuckoo_manager, name: "delegate")
+	    }
+	    
+	    
+	    func start() -> Cuckoo.ClassStubNoReturnFunction<()> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return .init(stub: cuckoo_manager.createStub(for: MockSplashCoordinator.self, method: "start()", parameterMatchers: matchers))
+	    }
+	    
+	}
+
+	 struct __VerificationProxy_SplashCoordinator: Cuckoo.VerificationProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	    private let callMatcher: Cuckoo.CallMatcher
+	    private let sourceLocation: Cuckoo.SourceLocation
+	
+	     init(manager: Cuckoo.MockManager, callMatcher: Cuckoo.CallMatcher, sourceLocation: Cuckoo.SourceLocation) {
+	        self.cuckoo_manager = manager
+	        self.callMatcher = callMatcher
+	        self.sourceLocation = sourceLocation
+	    }
+	
+	    
+	    
+	    var delegate: Cuckoo.VerifyOptionalProperty<Delegate> {
+	        return .init(manager: cuckoo_manager, name: "delegate", callMatcher: callMatcher, sourceLocation: sourceLocation)
+	    }
+	    
+	
+	    
+	    @discardableResult
+	    func start() -> Cuckoo.__DoNotUse<(), Void> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return cuckoo_manager.verify("start()", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	}
+}
+
+ class SplashCoordinatorStub: WeatherForecast.SplashCoordinator {
+    
+    
+     override var delegate: Delegate? {
+        get {
+            return DefaultValueRegistry.defaultValue(for: (Delegate?).self)
+        }
+        
+        set { }
+        
+    }
+    
+
+    
+
+    
+     override func start()   {
+        return DefaultValueRegistry.defaultValue(for: (Void).self)
+    }
+    
+}
+
+
+// MARK: - Mocks generated from file: WeatherForecast/ViewModels/WeatherForecast.BaseViewModel.swift
+
+import Cuckoo
+@testable import WeatherForecast
+
+import Foundation
+
+
+ class MockActionable: Actionable, Cuckoo.ProtocolMock {
+    
+     typealias MocksType = Actionable
+    
+     typealias Stubbing = __StubbingProxy_Actionable
+     typealias Verification = __VerificationProxy_Actionable
+
+     let cuckoo_manager = Cuckoo.MockManager.preconfiguredManager ?? Cuckoo.MockManager(hasParent: false)
+
+    
+    private var __defaultImplStub: Actionable?
+
+     func enableDefaultImplementation(_ stub: Actionable) {
+        __defaultImplStub = stub
+        cuckoo_manager.enableDefaultStubImplementation()
+    }
+    
+
+    
+
+    
+
+    
+
+	 struct __StubbingProxy_Actionable: Cuckoo.StubbingProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	
+	     init(manager: Cuckoo.MockManager) {
+	        self.cuckoo_manager = manager
+	    }
+	    
+	    
+	}
+
+	 struct __VerificationProxy_Actionable: Cuckoo.VerificationProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	    private let callMatcher: Cuckoo.CallMatcher
+	    private let sourceLocation: Cuckoo.SourceLocation
+	
+	     init(manager: Cuckoo.MockManager, callMatcher: Cuckoo.CallMatcher, sourceLocation: Cuckoo.SourceLocation) {
+	        self.cuckoo_manager = manager
+	        self.callMatcher = callMatcher
+	        self.sourceLocation = sourceLocation
+	    }
+	
+	    
+	
+	    
+	}
+}
+
+ class ActionableStub: Actionable {
+    
+
+    
+
+    
+}
+
+
+
+ class MockBaseViewModelType: BaseViewModelType, Cuckoo.ProtocolMock {
+    
+     typealias MocksType = BaseViewModelType
+    
+     typealias Stubbing = __StubbingProxy_BaseViewModelType
+     typealias Verification = __VerificationProxy_BaseViewModelType
+
+     let cuckoo_manager = Cuckoo.MockManager.preconfiguredManager ?? Cuckoo.MockManager(hasParent: false)
+
+    
+    private var __defaultImplStub: BaseViewModelType?
+
+     func enableDefaultImplementation(_ stub: BaseViewModelType) {
+        __defaultImplStub = stub
+        cuckoo_manager.enableDefaultStubImplementation()
+    }
+    
+
+    
+
+    
+
+    
+    
+    
+     func bind(_ object: AnyObject, _ handler: @escaping ActionHandler)  {
+        
+    return cuckoo_manager.call("bind(_: AnyObject, _: @escaping ActionHandler)",
+            parameters: (object, handler),
+            escapingParameters: (object, handler),
+            superclassCall:
+                
+                Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                ,
+            defaultCall: __defaultImplStub!.bind(object, handler))
+        
+    }
+    
+    
+    
+     func postInitialActions()  {
+        
+    return cuckoo_manager.call("postInitialActions()",
+            parameters: (),
+            escapingParameters: (),
+            superclassCall:
+                
+                Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                ,
+            defaultCall: __defaultImplStub!.postInitialActions())
+        
+    }
+    
+    
+    
+     func unbind(_ object: AnyObject)  {
+        
+    return cuckoo_manager.call("unbind(_: AnyObject)",
+            parameters: (object),
+            escapingParameters: (object),
+            superclassCall:
+                
+                Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                ,
+            defaultCall: __defaultImplStub!.unbind(object))
+        
+    }
+    
+    
+    
+     func post(_ action: Actionable)  {
+        
+    return cuckoo_manager.call("post(_: Actionable)",
+            parameters: (action),
+            escapingParameters: (action),
+            superclassCall:
+                
+                Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                ,
+            defaultCall: __defaultImplStub!.post(action))
+        
+    }
+    
+
+	 struct __StubbingProxy_BaseViewModelType: Cuckoo.StubbingProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	
+	     init(manager: Cuckoo.MockManager) {
+	        self.cuckoo_manager = manager
+	    }
+	    
+	    
+	    func bind<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(_ object: M1, _ handler: M2) -> Cuckoo.ProtocolStubNoReturnFunction<(AnyObject, ActionHandler)> where M1.MatchedType == AnyObject, M2.MatchedType == ActionHandler {
+	        let matchers: [Cuckoo.ParameterMatcher<(AnyObject, ActionHandler)>] = [wrap(matchable: object) { $0.0 }, wrap(matchable: handler) { $0.1 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockBaseViewModelType.self, method: "bind(_: AnyObject, _: @escaping ActionHandler)", parameterMatchers: matchers))
+	    }
+	    
+	    func postInitialActions() -> Cuckoo.ProtocolStubNoReturnFunction<()> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return .init(stub: cuckoo_manager.createStub(for: MockBaseViewModelType.self, method: "postInitialActions()", parameterMatchers: matchers))
+	    }
+	    
+	    func unbind<M1: Cuckoo.Matchable>(_ object: M1) -> Cuckoo.ProtocolStubNoReturnFunction<(AnyObject)> where M1.MatchedType == AnyObject {
+	        let matchers: [Cuckoo.ParameterMatcher<(AnyObject)>] = [wrap(matchable: object) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockBaseViewModelType.self, method: "unbind(_: AnyObject)", parameterMatchers: matchers))
+	    }
+	    
+	    func post<M1: Cuckoo.Matchable>(_ action: M1) -> Cuckoo.ProtocolStubNoReturnFunction<(Actionable)> where M1.MatchedType == Actionable {
+	        let matchers: [Cuckoo.ParameterMatcher<(Actionable)>] = [wrap(matchable: action) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockBaseViewModelType.self, method: "post(_: Actionable)", parameterMatchers: matchers))
+	    }
+	    
+	}
+
+	 struct __VerificationProxy_BaseViewModelType: Cuckoo.VerificationProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	    private let callMatcher: Cuckoo.CallMatcher
+	    private let sourceLocation: Cuckoo.SourceLocation
+	
+	     init(manager: Cuckoo.MockManager, callMatcher: Cuckoo.CallMatcher, sourceLocation: Cuckoo.SourceLocation) {
+	        self.cuckoo_manager = manager
+	        self.callMatcher = callMatcher
+	        self.sourceLocation = sourceLocation
+	    }
+	
+	    
+	
+	    
+	    @discardableResult
+	    func bind<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(_ object: M1, _ handler: M2) -> Cuckoo.__DoNotUse<(AnyObject, ActionHandler), Void> where M1.MatchedType == AnyObject, M2.MatchedType == ActionHandler {
+	        let matchers: [Cuckoo.ParameterMatcher<(AnyObject, ActionHandler)>] = [wrap(matchable: object) { $0.0 }, wrap(matchable: handler) { $0.1 }]
+	        return cuckoo_manager.verify("bind(_: AnyObject, _: @escaping ActionHandler)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func postInitialActions() -> Cuckoo.__DoNotUse<(), Void> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return cuckoo_manager.verify("postInitialActions()", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func unbind<M1: Cuckoo.Matchable>(_ object: M1) -> Cuckoo.__DoNotUse<(AnyObject), Void> where M1.MatchedType == AnyObject {
+	        let matchers: [Cuckoo.ParameterMatcher<(AnyObject)>] = [wrap(matchable: object) { $0 }]
+	        return cuckoo_manager.verify("unbind(_: AnyObject)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func post<M1: Cuckoo.Matchable>(_ action: M1) -> Cuckoo.__DoNotUse<(Actionable), Void> where M1.MatchedType == Actionable {
+	        let matchers: [Cuckoo.ParameterMatcher<(Actionable)>] = [wrap(matchable: action) { $0 }]
+	        return cuckoo_manager.verify("post(_: Actionable)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	}
+}
+
+ class BaseViewModelTypeStub: BaseViewModelType {
+    
+
+    
+
+    
+     func bind(_ object: AnyObject, _ handler: @escaping ActionHandler)   {
+        return DefaultValueRegistry.defaultValue(for: (Void).self)
+    }
+    
+     func postInitialActions()   {
+        return DefaultValueRegistry.defaultValue(for: (Void).self)
+    }
+    
+     func unbind(_ object: AnyObject)   {
+        return DefaultValueRegistry.defaultValue(for: (Void).self)
+    }
+    
+     func post(_ action: Actionable)   {
+        return DefaultValueRegistry.defaultValue(for: (Void).self)
+    }
+    
+}
+
+
+
+ class MockBaseViewModel: WeatherForecast.BaseViewModel, Cuckoo.ClassMock {
+    
+     typealias MocksType = WeatherForecast.BaseViewModel
+    
+     typealias Stubbing = __StubbingProxy_BaseViewModel
+     typealias Verification = __VerificationProxy_BaseViewModel
+
+     let cuckoo_manager = Cuckoo.MockManager.preconfiguredManager ?? Cuckoo.MockManager(hasParent: true)
+
+    
+    private var __defaultImplStub: WeatherForecast.BaseViewModel?
+
+     func enableDefaultImplementation(_ stub: WeatherForecast.BaseViewModel) {
+        __defaultImplStub = stub
+        cuckoo_manager.enableDefaultStubImplementation()
+    }
+    
+
+    
+
+    
+
+    
+    
+    
+     override func bind(_ object: AnyObject, _ handler: @escaping ActionHandler)  {
+        
+    return cuckoo_manager.call("bind(_: AnyObject, _: @escaping ActionHandler)",
+            parameters: (object, handler),
+            escapingParameters: (object, handler),
+            superclassCall:
+                
+                super.bind(object, handler)
+                ,
+            defaultCall: __defaultImplStub!.bind(object, handler))
+        
+    }
+    
+    
+    
+     override func postInitialActions()  {
+        
+    return cuckoo_manager.call("postInitialActions()",
+            parameters: (),
+            escapingParameters: (),
+            superclassCall:
+                
+                super.postInitialActions()
+                ,
+            defaultCall: __defaultImplStub!.postInitialActions())
+        
+    }
+    
+    
+    
+     override func unbind(_ object: AnyObject)  {
+        
+    return cuckoo_manager.call("unbind(_: AnyObject)",
+            parameters: (object),
+            escapingParameters: (object),
+            superclassCall:
+                
+                super.unbind(object)
+                ,
+            defaultCall: __defaultImplStub!.unbind(object))
+        
+    }
+    
+    
+    
+     override func post(_ action: Actionable)  {
+        
+    return cuckoo_manager.call("post(_: Actionable)",
+            parameters: (action),
+            escapingParameters: (action),
+            superclassCall:
+                
+                super.post(action)
+                ,
+            defaultCall: __defaultImplStub!.post(action))
+        
+    }
+    
+    
+    
+     override func post(_ action: Actionable, to object: AnyObject)  {
+        
+    return cuckoo_manager.call("post(_: Actionable, to: AnyObject)",
+            parameters: (action, object),
+            escapingParameters: (action, object),
+            superclassCall:
+                
+                super.post(action, to: object)
+                ,
+            defaultCall: __defaultImplStub!.post(action, to: object))
+        
+    }
+    
+
+	 struct __StubbingProxy_BaseViewModel: Cuckoo.StubbingProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	
+	     init(manager: Cuckoo.MockManager) {
+	        self.cuckoo_manager = manager
+	    }
+	    
+	    
+	    func bind<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(_ object: M1, _ handler: M2) -> Cuckoo.ClassStubNoReturnFunction<(AnyObject, ActionHandler)> where M1.MatchedType == AnyObject, M2.MatchedType == ActionHandler {
+	        let matchers: [Cuckoo.ParameterMatcher<(AnyObject, ActionHandler)>] = [wrap(matchable: object) { $0.0 }, wrap(matchable: handler) { $0.1 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockBaseViewModel.self, method: "bind(_: AnyObject, _: @escaping ActionHandler)", parameterMatchers: matchers))
+	    }
+	    
+	    func postInitialActions() -> Cuckoo.ClassStubNoReturnFunction<()> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return .init(stub: cuckoo_manager.createStub(for: MockBaseViewModel.self, method: "postInitialActions()", parameterMatchers: matchers))
+	    }
+	    
+	    func unbind<M1: Cuckoo.Matchable>(_ object: M1) -> Cuckoo.ClassStubNoReturnFunction<(AnyObject)> where M1.MatchedType == AnyObject {
+	        let matchers: [Cuckoo.ParameterMatcher<(AnyObject)>] = [wrap(matchable: object) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockBaseViewModel.self, method: "unbind(_: AnyObject)", parameterMatchers: matchers))
+	    }
+	    
+	    func post<M1: Cuckoo.Matchable>(_ action: M1) -> Cuckoo.ClassStubNoReturnFunction<(Actionable)> where M1.MatchedType == Actionable {
+	        let matchers: [Cuckoo.ParameterMatcher<(Actionable)>] = [wrap(matchable: action) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockBaseViewModel.self, method: "post(_: Actionable)", parameterMatchers: matchers))
+	    }
+	    
+	    func post<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(_ action: M1, to object: M2) -> Cuckoo.ClassStubNoReturnFunction<(Actionable, AnyObject)> where M1.MatchedType == Actionable, M2.MatchedType == AnyObject {
+	        let matchers: [Cuckoo.ParameterMatcher<(Actionable, AnyObject)>] = [wrap(matchable: action) { $0.0 }, wrap(matchable: object) { $0.1 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockBaseViewModel.self, method: "post(_: Actionable, to: AnyObject)", parameterMatchers: matchers))
+	    }
+	    
+	}
+
+	 struct __VerificationProxy_BaseViewModel: Cuckoo.VerificationProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	    private let callMatcher: Cuckoo.CallMatcher
+	    private let sourceLocation: Cuckoo.SourceLocation
+	
+	     init(manager: Cuckoo.MockManager, callMatcher: Cuckoo.CallMatcher, sourceLocation: Cuckoo.SourceLocation) {
+	        self.cuckoo_manager = manager
+	        self.callMatcher = callMatcher
+	        self.sourceLocation = sourceLocation
+	    }
+	
+	    
+	
+	    
+	    @discardableResult
+	    func bind<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(_ object: M1, _ handler: M2) -> Cuckoo.__DoNotUse<(AnyObject, ActionHandler), Void> where M1.MatchedType == AnyObject, M2.MatchedType == ActionHandler {
+	        let matchers: [Cuckoo.ParameterMatcher<(AnyObject, ActionHandler)>] = [wrap(matchable: object) { $0.0 }, wrap(matchable: handler) { $0.1 }]
+	        return cuckoo_manager.verify("bind(_: AnyObject, _: @escaping ActionHandler)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func postInitialActions() -> Cuckoo.__DoNotUse<(), Void> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return cuckoo_manager.verify("postInitialActions()", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func unbind<M1: Cuckoo.Matchable>(_ object: M1) -> Cuckoo.__DoNotUse<(AnyObject), Void> where M1.MatchedType == AnyObject {
+	        let matchers: [Cuckoo.ParameterMatcher<(AnyObject)>] = [wrap(matchable: object) { $0 }]
+	        return cuckoo_manager.verify("unbind(_: AnyObject)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func post<M1: Cuckoo.Matchable>(_ action: M1) -> Cuckoo.__DoNotUse<(Actionable), Void> where M1.MatchedType == Actionable {
+	        let matchers: [Cuckoo.ParameterMatcher<(Actionable)>] = [wrap(matchable: action) { $0 }]
+	        return cuckoo_manager.verify("post(_: Actionable)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func post<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(_ action: M1, to object: M2) -> Cuckoo.__DoNotUse<(Actionable, AnyObject), Void> where M1.MatchedType == Actionable, M2.MatchedType == AnyObject {
+	        let matchers: [Cuckoo.ParameterMatcher<(Actionable, AnyObject)>] = [wrap(matchable: action) { $0.0 }, wrap(matchable: object) { $0.1 }]
+	        return cuckoo_manager.verify("post(_: Actionable, to: AnyObject)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	}
+}
+
+ class BaseViewModelStub: WeatherForecast.BaseViewModel {
+    
+
+    
+
+    
+     override func bind(_ object: AnyObject, _ handler: @escaping ActionHandler)   {
+        return DefaultValueRegistry.defaultValue(for: (Void).self)
+    }
+    
+     override func postInitialActions()   {
+        return DefaultValueRegistry.defaultValue(for: (Void).self)
+    }
+    
+     override func unbind(_ object: AnyObject)   {
+        return DefaultValueRegistry.defaultValue(for: (Void).self)
+    }
+    
+     override func post(_ action: Actionable)   {
+        return DefaultValueRegistry.defaultValue(for: (Void).self)
+    }
+    
+     override func post(_ action: Actionable, to object: AnyObject)   {
+        return DefaultValueRegistry.defaultValue(for: (Void).self)
+    }
+    
+}
+
+
+// MARK: - Mocks generated from file: WeatherForecast/ViewModels/WeatherForecast.SplashViewModel.swift
+
+import Cuckoo
+@testable import WeatherForecast
+
+import Domain
+import Foundation
+
+
+ class MockSplashViewModelType: SplashViewModelType, Cuckoo.ProtocolMock {
+    
+     typealias MocksType = SplashViewModelType
+    
+     typealias Stubbing = __StubbingProxy_SplashViewModelType
+     typealias Verification = __VerificationProxy_SplashViewModelType
+
+     let cuckoo_manager = Cuckoo.MockManager.preconfiguredManager ?? Cuckoo.MockManager(hasParent: false)
+
+    
+    private var __defaultImplStub: SplashViewModelType?
+
+     func enableDefaultImplementation(_ stub: SplashViewModelType) {
+        __defaultImplStub = stub
+        cuckoo_manager.enableDefaultStubImplementation()
+    }
+    
+
+    
+
+    
+
+    
+    
+    
+     func load()  {
+        
+    return cuckoo_manager.call("load()",
+            parameters: (),
+            escapingParameters: (),
+            superclassCall:
+                
+                Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                ,
+            defaultCall: __defaultImplStub!.load())
+        
+    }
+    
+    
+    
+     func bind(_ object: AnyObject, _ handler: @escaping ActionHandler)  {
+        
+    return cuckoo_manager.call("bind(_: AnyObject, _: @escaping ActionHandler)",
+            parameters: (object, handler),
+            escapingParameters: (object, handler),
+            superclassCall:
+                
+                Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                ,
+            defaultCall: __defaultImplStub!.bind(object, handler))
+        
+    }
+    
+    
+    
+     func postInitialActions()  {
+        
+    return cuckoo_manager.call("postInitialActions()",
+            parameters: (),
+            escapingParameters: (),
+            superclassCall:
+                
+                Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                ,
+            defaultCall: __defaultImplStub!.postInitialActions())
+        
+    }
+    
+    
+    
+     func unbind(_ object: AnyObject)  {
+        
+    return cuckoo_manager.call("unbind(_: AnyObject)",
+            parameters: (object),
+            escapingParameters: (object),
+            superclassCall:
+                
+                Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                ,
+            defaultCall: __defaultImplStub!.unbind(object))
+        
+    }
+    
+    
+    
+     func post(_ action: Actionable)  {
+        
+    return cuckoo_manager.call("post(_: Actionable)",
+            parameters: (action),
+            escapingParameters: (action),
+            superclassCall:
+                
+                Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                ,
+            defaultCall: __defaultImplStub!.post(action))
+        
+    }
+    
+
+	 struct __StubbingProxy_SplashViewModelType: Cuckoo.StubbingProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	
+	     init(manager: Cuckoo.MockManager) {
+	        self.cuckoo_manager = manager
+	    }
+	    
+	    
+	    func load() -> Cuckoo.ProtocolStubNoReturnFunction<()> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return .init(stub: cuckoo_manager.createStub(for: MockSplashViewModelType.self, method: "load()", parameterMatchers: matchers))
+	    }
+	    
+	    func bind<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(_ object: M1, _ handler: M2) -> Cuckoo.ProtocolStubNoReturnFunction<(AnyObject, ActionHandler)> where M1.MatchedType == AnyObject, M2.MatchedType == ActionHandler {
+	        let matchers: [Cuckoo.ParameterMatcher<(AnyObject, ActionHandler)>] = [wrap(matchable: object) { $0.0 }, wrap(matchable: handler) { $0.1 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockSplashViewModelType.self, method: "bind(_: AnyObject, _: @escaping ActionHandler)", parameterMatchers: matchers))
+	    }
+	    
+	    func postInitialActions() -> Cuckoo.ProtocolStubNoReturnFunction<()> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return .init(stub: cuckoo_manager.createStub(for: MockSplashViewModelType.self, method: "postInitialActions()", parameterMatchers: matchers))
+	    }
+	    
+	    func unbind<M1: Cuckoo.Matchable>(_ object: M1) -> Cuckoo.ProtocolStubNoReturnFunction<(AnyObject)> where M1.MatchedType == AnyObject {
+	        let matchers: [Cuckoo.ParameterMatcher<(AnyObject)>] = [wrap(matchable: object) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockSplashViewModelType.self, method: "unbind(_: AnyObject)", parameterMatchers: matchers))
+	    }
+	    
+	    func post<M1: Cuckoo.Matchable>(_ action: M1) -> Cuckoo.ProtocolStubNoReturnFunction<(Actionable)> where M1.MatchedType == Actionable {
+	        let matchers: [Cuckoo.ParameterMatcher<(Actionable)>] = [wrap(matchable: action) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockSplashViewModelType.self, method: "post(_: Actionable)", parameterMatchers: matchers))
+	    }
+	    
+	}
+
+	 struct __VerificationProxy_SplashViewModelType: Cuckoo.VerificationProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	    private let callMatcher: Cuckoo.CallMatcher
+	    private let sourceLocation: Cuckoo.SourceLocation
+	
+	     init(manager: Cuckoo.MockManager, callMatcher: Cuckoo.CallMatcher, sourceLocation: Cuckoo.SourceLocation) {
+	        self.cuckoo_manager = manager
+	        self.callMatcher = callMatcher
+	        self.sourceLocation = sourceLocation
+	    }
+	
+	    
+	
+	    
+	    @discardableResult
+	    func load() -> Cuckoo.__DoNotUse<(), Void> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return cuckoo_manager.verify("load()", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func bind<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(_ object: M1, _ handler: M2) -> Cuckoo.__DoNotUse<(AnyObject, ActionHandler), Void> where M1.MatchedType == AnyObject, M2.MatchedType == ActionHandler {
+	        let matchers: [Cuckoo.ParameterMatcher<(AnyObject, ActionHandler)>] = [wrap(matchable: object) { $0.0 }, wrap(matchable: handler) { $0.1 }]
+	        return cuckoo_manager.verify("bind(_: AnyObject, _: @escaping ActionHandler)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func postInitialActions() -> Cuckoo.__DoNotUse<(), Void> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return cuckoo_manager.verify("postInitialActions()", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func unbind<M1: Cuckoo.Matchable>(_ object: M1) -> Cuckoo.__DoNotUse<(AnyObject), Void> where M1.MatchedType == AnyObject {
+	        let matchers: [Cuckoo.ParameterMatcher<(AnyObject)>] = [wrap(matchable: object) { $0 }]
+	        return cuckoo_manager.verify("unbind(_: AnyObject)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func post<M1: Cuckoo.Matchable>(_ action: M1) -> Cuckoo.__DoNotUse<(Actionable), Void> where M1.MatchedType == Actionable {
+	        let matchers: [Cuckoo.ParameterMatcher<(Actionable)>] = [wrap(matchable: action) { $0 }]
+	        return cuckoo_manager.verify("post(_: Actionable)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	}
+}
+
+ class SplashViewModelTypeStub: SplashViewModelType {
+    
+
+    
+
+    
+     func load()   {
+        return DefaultValueRegistry.defaultValue(for: (Void).self)
+    }
+    
+     func bind(_ object: AnyObject, _ handler: @escaping ActionHandler)   {
+        return DefaultValueRegistry.defaultValue(for: (Void).self)
+    }
+    
+     func postInitialActions()   {
+        return DefaultValueRegistry.defaultValue(for: (Void).self)
+    }
+    
+     func unbind(_ object: AnyObject)   {
+        return DefaultValueRegistry.defaultValue(for: (Void).self)
+    }
+    
+     func post(_ action: Actionable)   {
+        return DefaultValueRegistry.defaultValue(for: (Void).self)
+    }
+    
+}
+
+
+
+ class MockSplashViewModel: WeatherForecast.SplashViewModel, Cuckoo.ClassMock {
+    
+     typealias MocksType = WeatherForecast.SplashViewModel
+    
+     typealias Stubbing = __StubbingProxy_SplashViewModel
+     typealias Verification = __VerificationProxy_SplashViewModel
+
+     let cuckoo_manager = Cuckoo.MockManager.preconfiguredManager ?? Cuckoo.MockManager(hasParent: true)
+
+    
+    private var __defaultImplStub: WeatherForecast.SplashViewModel?
+
+     func enableDefaultImplementation(_ stub: WeatherForecast.SplashViewModel) {
+        __defaultImplStub = stub
+        cuckoo_manager.enableDefaultStubImplementation()
+    }
+    
+
+    
+
+    
+
+    
+    
+    
+     override func postInitialActions()  {
+        
+    return cuckoo_manager.call("postInitialActions()",
+            parameters: (),
+            escapingParameters: (),
+            superclassCall:
+                
+                super.postInitialActions()
+                ,
+            defaultCall: __defaultImplStub!.postInitialActions())
+        
+    }
+    
+    
+    
+     override func load()  {
+        
+    return cuckoo_manager.call("load()",
+            parameters: (),
+            escapingParameters: (),
+            superclassCall:
+                
+                super.load()
+                ,
+            defaultCall: __defaultImplStub!.load())
+        
+    }
+    
+    
+    
+     override func bind(_ object: AnyObject, _ handler: @escaping ActionHandler)  {
+        
+    return cuckoo_manager.call("bind(_: AnyObject, _: @escaping ActionHandler)",
+            parameters: (object, handler),
+            escapingParameters: (object, handler),
+            superclassCall:
+                
+                super.bind(object, handler)
+                ,
+            defaultCall: __defaultImplStub!.bind(object, handler))
+        
+    }
+    
+    
+    
+     override func unbind(_ object: AnyObject)  {
+        
+    return cuckoo_manager.call("unbind(_: AnyObject)",
+            parameters: (object),
+            escapingParameters: (object),
+            superclassCall:
+                
+                super.unbind(object)
+                ,
+            defaultCall: __defaultImplStub!.unbind(object))
+        
+    }
+    
+    
+    
+     override func post(_ action: Actionable)  {
+        
+    return cuckoo_manager.call("post(_: Actionable)",
+            parameters: (action),
+            escapingParameters: (action),
+            superclassCall:
+                
+                super.post(action)
+                ,
+            defaultCall: __defaultImplStub!.post(action))
+        
+    }
+    
+    
+    
+     override func post(_ action: Actionable, to object: AnyObject)  {
+        
+    return cuckoo_manager.call("post(_: Actionable, to: AnyObject)",
+            parameters: (action, object),
+            escapingParameters: (action, object),
+            superclassCall:
+                
+                super.post(action, to: object)
+                ,
+            defaultCall: __defaultImplStub!.post(action, to: object))
+        
+    }
+    
+
+	 struct __StubbingProxy_SplashViewModel: Cuckoo.StubbingProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	
+	     init(manager: Cuckoo.MockManager) {
+	        self.cuckoo_manager = manager
+	    }
+	    
+	    
+	    func postInitialActions() -> Cuckoo.ClassStubNoReturnFunction<()> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return .init(stub: cuckoo_manager.createStub(for: MockSplashViewModel.self, method: "postInitialActions()", parameterMatchers: matchers))
+	    }
+	    
+	    func load() -> Cuckoo.ClassStubNoReturnFunction<()> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return .init(stub: cuckoo_manager.createStub(for: MockSplashViewModel.self, method: "load()", parameterMatchers: matchers))
+	    }
+	    
+	    func bind<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(_ object: M1, _ handler: M2) -> Cuckoo.ClassStubNoReturnFunction<(AnyObject, ActionHandler)> where M1.MatchedType == AnyObject, M2.MatchedType == ActionHandler {
+	        let matchers: [Cuckoo.ParameterMatcher<(AnyObject, ActionHandler)>] = [wrap(matchable: object) { $0.0 }, wrap(matchable: handler) { $0.1 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockSplashViewModel.self, method: "bind(_: AnyObject, _: @escaping ActionHandler)", parameterMatchers: matchers))
+	    }
+	    
+	    func unbind<M1: Cuckoo.Matchable>(_ object: M1) -> Cuckoo.ClassStubNoReturnFunction<(AnyObject)> where M1.MatchedType == AnyObject {
+	        let matchers: [Cuckoo.ParameterMatcher<(AnyObject)>] = [wrap(matchable: object) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockSplashViewModel.self, method: "unbind(_: AnyObject)", parameterMatchers: matchers))
+	    }
+	    
+	    func post<M1: Cuckoo.Matchable>(_ action: M1) -> Cuckoo.ClassStubNoReturnFunction<(Actionable)> where M1.MatchedType == Actionable {
+	        let matchers: [Cuckoo.ParameterMatcher<(Actionable)>] = [wrap(matchable: action) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockSplashViewModel.self, method: "post(_: Actionable)", parameterMatchers: matchers))
+	    }
+	    
+	    func post<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(_ action: M1, to object: M2) -> Cuckoo.ClassStubNoReturnFunction<(Actionable, AnyObject)> where M1.MatchedType == Actionable, M2.MatchedType == AnyObject {
+	        let matchers: [Cuckoo.ParameterMatcher<(Actionable, AnyObject)>] = [wrap(matchable: action) { $0.0 }, wrap(matchable: object) { $0.1 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockSplashViewModel.self, method: "post(_: Actionable, to: AnyObject)", parameterMatchers: matchers))
+	    }
+	    
+	}
+
+	 struct __VerificationProxy_SplashViewModel: Cuckoo.VerificationProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	    private let callMatcher: Cuckoo.CallMatcher
+	    private let sourceLocation: Cuckoo.SourceLocation
+	
+	     init(manager: Cuckoo.MockManager, callMatcher: Cuckoo.CallMatcher, sourceLocation: Cuckoo.SourceLocation) {
+	        self.cuckoo_manager = manager
+	        self.callMatcher = callMatcher
+	        self.sourceLocation = sourceLocation
+	    }
+	
+	    
+	
+	    
+	    @discardableResult
+	    func postInitialActions() -> Cuckoo.__DoNotUse<(), Void> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return cuckoo_manager.verify("postInitialActions()", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func load() -> Cuckoo.__DoNotUse<(), Void> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return cuckoo_manager.verify("load()", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func bind<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(_ object: M1, _ handler: M2) -> Cuckoo.__DoNotUse<(AnyObject, ActionHandler), Void> where M1.MatchedType == AnyObject, M2.MatchedType == ActionHandler {
+	        let matchers: [Cuckoo.ParameterMatcher<(AnyObject, ActionHandler)>] = [wrap(matchable: object) { $0.0 }, wrap(matchable: handler) { $0.1 }]
+	        return cuckoo_manager.verify("bind(_: AnyObject, _: @escaping ActionHandler)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func unbind<M1: Cuckoo.Matchable>(_ object: M1) -> Cuckoo.__DoNotUse<(AnyObject), Void> where M1.MatchedType == AnyObject {
+	        let matchers: [Cuckoo.ParameterMatcher<(AnyObject)>] = [wrap(matchable: object) { $0 }]
+	        return cuckoo_manager.verify("unbind(_: AnyObject)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func post<M1: Cuckoo.Matchable>(_ action: M1) -> Cuckoo.__DoNotUse<(Actionable), Void> where M1.MatchedType == Actionable {
+	        let matchers: [Cuckoo.ParameterMatcher<(Actionable)>] = [wrap(matchable: action) { $0 }]
+	        return cuckoo_manager.verify("post(_: Actionable)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func post<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(_ action: M1, to object: M2) -> Cuckoo.__DoNotUse<(Actionable, AnyObject), Void> where M1.MatchedType == Actionable, M2.MatchedType == AnyObject {
+	        let matchers: [Cuckoo.ParameterMatcher<(Actionable, AnyObject)>] = [wrap(matchable: action) { $0.0 }, wrap(matchable: object) { $0.1 }]
+	        return cuckoo_manager.verify("post(_: Actionable, to: AnyObject)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	}
+}
+
+ class SplashViewModelStub: WeatherForecast.SplashViewModel {
+    
+
+    
+
+    
+     override func postInitialActions()   {
+        return DefaultValueRegistry.defaultValue(for: (Void).self)
+    }
+    
+     override func load()   {
+        return DefaultValueRegistry.defaultValue(for: (Void).self)
+    }
+    
+     override func bind(_ object: AnyObject, _ handler: @escaping ActionHandler)   {
+        return DefaultValueRegistry.defaultValue(for: (Void).self)
+    }
+    
+     override func unbind(_ object: AnyObject)   {
+        return DefaultValueRegistry.defaultValue(for: (Void).self)
+    }
+    
+     override func post(_ action: Actionable)   {
+        return DefaultValueRegistry.defaultValue(for: (Void).self)
+    }
+    
+     override func post(_ action: Actionable, to object: AnyObject)   {
+        return DefaultValueRegistry.defaultValue(for: (Void).self)
+    }
+    
+}

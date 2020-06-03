@@ -2,7 +2,7 @@ import Platform
 import UIKit
 
 class CityListViewController: BaseViewController {
-  var viewModel: CityListViewModel!
+  var viewModel: CityListViewModelType!
 
   @IBOutlet var loadingView: UIView!
   @IBOutlet var tableView: UITableView!
@@ -32,12 +32,14 @@ private extension CityListViewController {
       guard let self = self else { return }
 
       switch action {
-      case .isLoading(let isLoading):
+      case CityListViewModelAction.isLoading(let isLoading):
         self.loadingView.isHidden = !isLoading
-      case .itemSelected:
+      case CityListViewModelAction.itemSelected:
         break
-      case .itemsUpdated:
+      case CityListViewModelAction.itemsUpdated:
         self.tableView.reloadData()
+      default:
+        break
       }
     }
   }

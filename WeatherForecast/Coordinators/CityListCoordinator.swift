@@ -3,22 +3,22 @@ import Foundation
 import UIKit
 
 class CityListCoordinator: Coordinator {
-  let useCaseProvider: Domain.UseCaseProvider
+  let coordinatorProvider: CityListCoordinatorProviderType
 
-  init(navigationController: UINavigationController, useCaseProvider: Domain.UseCaseProvider) {
-    self.useCaseProvider = useCaseProvider
+  init(navigationController: UINavigationController,
+       coordinatorProvider: CityListCoordinatorProviderType) {
+    self.coordinatorProvider = coordinatorProvider
 
     super.init(navigationController: navigationController)
   }
 
   override func start() {
-    let viewController = CityListViewController.initiate()
-    let viewModel = CityListViewModel(getCitiesUseCase: useCaseProvider.makeGetCitiesUseCase())
-    viewController.viewModel = viewModel
+    let viewModel = coordinatorProvider.makeViewModel()
+    let viewController = coordinatorProvider.makeViewController(viewModel: viewModel)
 
     viewModel.bind(self) { [weak self] action in
       switch action {
-      case .itemSelected(let item):
+      case CityListViewModelAction.itemSelected(let item):
         self?.toDetails(for: item)
       default:
         break
@@ -40,9 +40,7 @@ private extension CityListCoordinator {
   func toDetails(for city: CityType) {
     guard let navigationController = navigationController else { return }
 
-    let coordinator = CityDetailsCoordinator(navigationController: navigationController,
-                                             useCaseProvider: useCaseProvider,
-                                             delegate: self)
+    let coordinator = coordinatorProvider.makeCityDetailsCoordinator(navigationController: navigationController, delegate: self)
     childStarted(coordinator)
     coordinator.start(with: city)
   }

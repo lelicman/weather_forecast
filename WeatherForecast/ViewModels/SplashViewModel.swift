@@ -7,11 +7,13 @@ enum SplashViewModelAction: Actionable {
   case showError(Error)
 }
 
-protocol SplashViewModelType {
+protocol SplashViewModelType: BaseViewModelType {
   func load()
 }
 
-class SplashViewModel: BaseViewModel<SplashViewModelAction>, SplashViewModelType {
+class SplashViewModel: BaseViewModel, SplashViewModelType {
+  typealias Action = SplashViewModelAction
+
   let importCitiesUseCase: ImportCitiesUseCase
 
   init(importCitiesUseCase: ImportCitiesUseCase) {
@@ -19,20 +21,20 @@ class SplashViewModel: BaseViewModel<SplashViewModelAction>, SplashViewModelType
   }
 
   override func postInitialActions() {
-    post(.isLoading(false))
+    post(SplashViewModelAction.isLoading(false))
   }
 
   func load() {
-    post(.isLoading(true))
+    post(SplashViewModelAction.isLoading(true))
     importCitiesUseCase.get { [weak self] result in
       DispatchQueue.main.async {
         guard let self = self else { return }
-        self.post(.isLoading(false))
+        self.post(SplashViewModelAction.isLoading(false))
 
         if let error = result.error {
-          self.post(.showError(error))
+          self.post(SplashViewModelAction.showError(error))
         } else {
-          self.post(.completed)
+          self.post(SplashViewModelAction.completed)
         }
       }
     }

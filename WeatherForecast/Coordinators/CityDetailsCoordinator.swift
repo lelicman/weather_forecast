@@ -9,27 +9,25 @@ protocol CityDetailsCoordinatorDelegate: class {
 class CityDetailsCoordinator: Coordinator {
   typealias Delegate = CityDetailsCoordinatorDelegate
   weak var delegate: Delegate?
-  let useCaseProvider: Domain.UseCaseProvider
+  let coordinatorProvider: CityDetailsCoordinatorProviderType
 
   init(navigationController: UINavigationController,
-       useCaseProvider: Domain.UseCaseProvider,
-       delegate: Delegate) {
+       delegate: Delegate,
+       coordinatorProvider: CityDetailsCoordinatorProviderType) {
     self.delegate = delegate
-    self.useCaseProvider = useCaseProvider
+    self.coordinatorProvider = coordinatorProvider
 
     super.init(navigationController: navigationController)
   }
 
   func start(with city: CityType) {
-    let viewController = CityDetailsViewController.initiate()
-    let viewModel = CityWeatherDetailsViewModel(city: city,
-                                                getCityWeatherUseCase: useCaseProvider.makeGetCityWeatherUseCase())
-    viewController.viewModel = viewModel
+    let viewModel = coordinatorProvider.makeViewModel(with: city)
+    let viewController = coordinatorProvider.makeViewController(viewModel: viewModel)
 
     viewModel.bind(self) { [weak self] action in
       guard let self = self else { return }
       switch action {
-      case .backPressed:
+      case CityWeatherDetailsViewModelAction.backPressed:
         self.delegate?.coordinatorCompleted(coordinator: self)
       default:
         break

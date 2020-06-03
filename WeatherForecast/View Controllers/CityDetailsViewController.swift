@@ -2,7 +2,7 @@ import Platform
 import UIKit
 
 class CityDetailsViewController: BaseViewController {
-  var viewModel: CityWeatherDetailsViewModel!
+  var viewModel: CityWeatherDetailsViewModelType!
 
   @IBOutlet var loadingView: UIView!
   @IBOutlet var temperatureLabel: UILabel!
@@ -42,18 +42,20 @@ private extension CityDetailsViewController {
       guard let self = self else { return }
 
       switch action {
-      case .isLoading(let isLoading):
+      case CityWeatherDetailsViewModelAction.isLoading(let isLoading):
         self.loadingView.isHidden = !isLoading
         self.contentView.isHidden = isLoading
-      case .backPressed:
+      case CityWeatherDetailsViewModelAction.backPressed:
         self.dismiss(animated: true)
-      case .cityNameUpdated(let cityName):
+      case CityWeatherDetailsViewModelAction.cityNameUpdated(let cityName):
         self.navigationItem.title = cityName
-      case .weatherUpdated(let weather):
+      case CityWeatherDetailsViewModelAction.weatherUpdated(let weather):
         self.updateWeather(with: weather)
-      case .showError(let error):
+      case CityWeatherDetailsViewModelAction.showError(let error):
         self.updateWeather(with: nil)
         self.show(error: error)
+      default:
+        break
       }
     }
   }

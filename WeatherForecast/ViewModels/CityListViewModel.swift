@@ -7,7 +7,7 @@ enum CityListViewModelAction: Actionable {
   case itemsUpdated([CityPresentableModel])
 }
 
-protocol CityListViewModelType {
+protocol CityListViewModelType: BaseViewModelType {
   var filteredItems: [CityPresentableModel] { get }
 
   func load()
@@ -15,7 +15,7 @@ protocol CityListViewModelType {
   func search(by text: String)
 }
 
-class CityListViewModel: BaseViewModel<CityListViewModelAction>, CityListViewModelType {
+class CityListViewModel: BaseViewModel, CityListViewModelType {
   let getCitiesUseCase: GetCitiesUseCase
   let converter: CityPresentableModelConverterType
 
@@ -29,7 +29,7 @@ class CityListViewModel: BaseViewModel<CityListViewModelAction>, CityListViewMod
 
   private(set) var filteredItems: [CityPresentableModel] = [] {
     didSet {
-      post(.itemsUpdated(items))
+      post(CityListViewModelAction.itemsUpdated(items))
     }
   }
 
@@ -40,15 +40,15 @@ class CityListViewModel: BaseViewModel<CityListViewModelAction>, CityListViewMod
   }
 
   override func postInitialActions() {
-    post(.isLoading(false))
+    post(CityListViewModelAction.isLoading(false))
   }
 
   func load() {
-    post(.isLoading(true))
+    post(CityListViewModelAction.isLoading(true))
     getCitiesUseCase.get { [weak self] result in
       DispatchQueue.main.async {
         guard let self = self else { return }
-        self.post(.isLoading(false))
+        self.post(CityListViewModelAction.isLoading(false))
         self.originalItems = result.value ?? []
         self.items = self.converter.from(result.value ?? [])
       }
@@ -57,7 +57,7 @@ class CityListViewModel: BaseViewModel<CityListViewModelAction>, CityListViewMod
 
   func select(item: CityPresentableModel) {
     guard let city = originalItems.first(where: { $0.id == item.id }) else { return }
-    post(.itemSelected(city))
+    post(CityListViewModelAction.itemSelected(city))
   }
 
   func search(by text: String) {

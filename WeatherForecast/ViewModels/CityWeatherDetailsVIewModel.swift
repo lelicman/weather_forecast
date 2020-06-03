@@ -9,19 +9,19 @@ enum CityWeatherDetailsViewModelAction: Actionable {
   case showError(Error)
 }
 
-protocol CityWeatherDetailsViewModelType {
+protocol CityWeatherDetailsViewModelType: BaseViewModelType {
   func load()
   func back()
 }
 
-class CityWeatherDetailsViewModel: BaseViewModel<CityWeatherDetailsViewModelAction>, CityWeatherDetailsViewModelType {
+class CityWeatherDetailsViewModel: BaseViewModel, CityWeatherDetailsViewModelType {
   let getCityWeatherUseCase: GetCityWeatherUseCase
   let converter: CityWeatherPresentableModelConverterType
   private let city: CityType
 
   private var weather: CityWeatherPresentableModel? {
     didSet {
-      post(.weatherUpdated(weather))
+      post(CityWeatherDetailsViewModelAction.weatherUpdated(weather))
     }
   }
 
@@ -34,27 +34,27 @@ class CityWeatherDetailsViewModel: BaseViewModel<CityWeatherDetailsViewModelActi
   }
 
   override func postInitialActions() {
-    post(.isLoading(false))
-    post(.cityNameUpdated(city.name))
+    post(CityWeatherDetailsViewModelAction.isLoading(false))
+    post(CityWeatherDetailsViewModelAction.cityNameUpdated(city.name))
   }
 
   func load() {
-    post(.isLoading(true))
+    post(CityWeatherDetailsViewModelAction.isLoading(true))
     getCityWeatherUseCase.get(with: city.id) { [weak self] result in
       DispatchQueue.main.async {
         guard let self = self else { return }
-        self.post(.isLoading(false))
+        self.post(CityWeatherDetailsViewModelAction.isLoading(false))
 
         if let weather = result.value {
           self.weather = self.converter.from(weather)
         } else if let error = result.error {
-          self.post(.showError(error))
+          self.post(CityWeatherDetailsViewModelAction.showError(error))
         }
       }
     }
   }
 
   func back() {
-    post(.backPressed)
+    post(CityWeatherDetailsViewModelAction.backPressed)
   }
 }

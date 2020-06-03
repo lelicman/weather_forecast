@@ -2,7 +2,7 @@ import Platform
 import UIKit
 
 class SplashViewController: BaseViewController {
-  var viewModel: SplashViewModel!
+  var viewModel: SplashViewModelType!
 
   @IBOutlet var loadingView: UIView!
   @IBOutlet var importingLabel: UILabel!
@@ -31,11 +31,13 @@ private extension SplashViewController {
       guard let self = self else { return }
 
       switch action {
-      case .isLoading(let isLoading):
+      case SplashViewModelAction.isLoading(let isLoading):
         self.loadingView.isHidden = !isLoading
-      case .showError(let error):
+      case SplashViewModelAction.showError(let error):
         self.show(error: error)
-      case .completed:
+      case SplashViewModelAction.completed:
+        break
+      default:
         break
       }
     }
