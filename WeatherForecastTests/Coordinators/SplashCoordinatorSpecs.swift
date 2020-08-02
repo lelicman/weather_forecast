@@ -109,7 +109,6 @@ class MockSplashViewController: SplashViewController {
 
 class MockWindow: UIWindow {
   var mockedRootViewController: UIViewController?
-  
   override var rootViewController: UIViewController? {
     get {
       mockedRootViewController
