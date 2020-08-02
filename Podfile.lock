@@ -28,15 +28,15 @@ PODS:
     - ObjcExceptionBridging
 
 DEPENDENCIES:
-  - Cuckoo
-  - Moya
-  - Nimble
-  - Quick
-  - RealmSwift
-  - SVProgressHUD
-  - SwiftLint
-  - Wormholy
-  - XCGLogger
+  - Cuckoo (= 1.3.2)
+  - Moya (= 13.0.1)
+  - Nimble (= 8.1.1)
+  - Quick (= 3.0.0)
+  - RealmSwift (= 5.0.3)
+  - SVProgressHUD (= 2.2.5)
+  - SwiftLint (= 0.39.2)
+  - Wormholy (= 1.6.2)
+  - XCGLogger (= 7.0.1)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -69,6 +69,6 @@ SPEC CHECKSUMS:
   Wormholy: 5a186f877829e7d488963b09f204e0186b40c9a8
   XCGLogger: 1943831ef907df55108b0b18657953f868de973b
 
-PODFILE CHECKSUM: a735cca94a829bb6bcfd1c7827e103d40751e101
+PODFILE CHECKSUM: 7c7ad0ac4a5e130d15d8a5e05d0deb500513f353
 
 COCOAPODS: 1.9.0
