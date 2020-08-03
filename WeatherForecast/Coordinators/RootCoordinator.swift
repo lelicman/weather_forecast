@@ -1,14 +1,15 @@
 import Domain
 import Foundation
-import Platform
 
 class RootCoordinator: Coordinator {
   let useCaseProvider: Domain.UseCaseProvider
   let coordinatorProvider: RootCoordinatorProviderType
 
-  override init(window: UIWindow) {
-    self.useCaseProvider = Platform.UseCaseProvider()
-    self.coordinatorProvider = RootCoordinatorProvider(useCaseProvider: self.useCaseProvider)
+  init(window: UIWindow,
+       useCaseProvider: Domain.UseCaseProvider,
+       coordinatorProvider: RootCoordinatorProvider) {
+    self.useCaseProvider = useCaseProvider
+    self.coordinatorProvider = coordinatorProvider
 
     super.init(window: window)
   }

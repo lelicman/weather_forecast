@@ -71,12 +71,12 @@ extension CityListViewController: UITableViewDataSource {
   }
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return viewModel.filteredItems.count
+    return viewModel.items.count
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     guard let cell = tableView.dequeueReusableCell(withIdentifier: CityCell.identifier()) as? CityCell,
-    let model = viewModel.filteredItems[safe: indexPath.row]else {
+      let model = viewModel.items[safe: indexPath.row] else {
       preconditionFailure()
     }
 
@@ -87,7 +87,7 @@ extension CityListViewController: UITableViewDataSource {
 
 extension CityListViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    guard let model = viewModel.filteredItems[safe: indexPath.row] else {
+    guard let model = viewModel.items[safe: indexPath.row] else {
       preconditionFailure()
     }
 

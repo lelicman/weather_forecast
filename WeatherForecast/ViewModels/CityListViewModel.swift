@@ -5,10 +5,11 @@ enum CityListViewModelAction: Actionable {
   case isLoading(Bool)
   case itemSelected(CityType)
   case itemsUpdated([CityPresentableModel])
+  case showError(Error)
 }
 
 protocol CityListViewModelType: BaseViewModelType {
-  var filteredItems: [CityPresentableModel] { get }
+  var items: [CityPresentableModel] { get }
 
   func load()
   func select(item: CityPresentableModel)
@@ -17,25 +18,20 @@ protocol CityListViewModelType: BaseViewModelType {
 
 class CityListViewModel: BaseViewModel, CityListViewModelType {
   let getCitiesUseCase: GetCitiesUseCase
+  let getCityUseCase: GetCityUseCase
   let converter: CityPresentableModelConverterType
 
-  private var originalItems: [CityType] = []
-
-  private var items: [CityPresentableModel] = [] {
-    didSet {
-      filteredItems = items
-    }
-  }
-
-  private(set) var filteredItems: [CityPresentableModel] = [] {
+  private(set) var items: [CityPresentableModel] = [] {
     didSet {
       post(CityListViewModelAction.itemsUpdated(items))
     }
   }
 
   init(getCitiesUseCase: GetCitiesUseCase,
+       getCityUseCase: GetCityUseCase,
        converter: CityPresentableModelConverterType = CityPresentableModelConverter()) {
     self.getCitiesUseCase = getCitiesUseCase
+    self.getCityUseCase = getCityUseCase
     self.converter = converter
   }
 
@@ -49,22 +45,34 @@ class CityListViewModel: BaseViewModel, CityListViewModelType {
       DispatchQueue.main.async {
         guard let self = self else { return }
         self.post(CityListViewModelAction.isLoading(false))
-        self.originalItems = result.value ?? []
         self.items = self.converter.from(result.value ?? [])
       }
     }
   }
 
   func select(item: CityPresentableModel) {
-    guard let city = originalItems.first(where: { $0.id == item.id }) else { return }
-    post(CityListViewModelAction.itemSelected(city))
+    post(CityListViewModelAction.isLoading(true))
+    getCityUseCase.get(by: item.id) { [weak self] result in
+      DispatchQueue.main.async {
+        guard let self = self else { return }
+        self.post(CityListViewModelAction.isLoading(false))
+        if let city = result.value {
+          self.post(CityListViewModelAction.itemSelected(city))
+        } else if let error = result.error {
+          self.post(CityListViewModelAction.showError(error))
+        }
+      }
+    }
   }
 
   func search(by text: String) {
-    if text.count > 0 {
-      filteredItems = items.filter { $0.name.lowercased().contains(text.lowercased()) }
-    } else {
-      filteredItems = items
+    post(CityListViewModelAction.isLoading(true))
+    getCitiesUseCase.get(by: text) { [weak self] result in
+      DispatchQueue.main.async {
+        guard let self = self else { return }
+        self.post(CityListViewModelAction.isLoading(false))
+        self.items = self.converter.from(result.value ?? [])
+      }
     }
   }
 }

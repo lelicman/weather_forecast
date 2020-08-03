@@ -4,6 +4,7 @@ import Foundation
 protocol CityConverterType {
   func from(response: [CityResponse]) -> [CityType]
   func from(models: [RealmCity]) -> [CityType]
+  func from(model: RealmCity) -> CityType
 }
 
 class CityConverter: CityConverterType {
@@ -23,17 +24,19 @@ class CityConverter: CityConverterType {
   }
 
   func from(models: [RealmCity]) -> [CityType] {
-    return models.map { city in
-      let coordinates = Coordinates(
-        longtitude: city.longtitude,
-        latitude: city.latitude
-      )
-      return City(
-        id: City.Identifier(rawValue: city.id),
-        name: city.name,
-        countryCode: city.countryCode,
-        coordinates: coordinates
-      )
-    }
+    return models.map(from(model:))
+  }
+
+  func from(model: RealmCity) -> CityType {
+    let coordinates = Coordinates(
+      longtitude: model.longtitude,
+      latitude: model.latitude
+    )
+    return City(
+      id: City.Identifier(rawValue: model.id),
+      name: model.name,
+      countryCode: model.countryCode,
+      coordinates: coordinates
+    )
   }
 }

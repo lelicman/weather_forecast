@@ -143,6 +143,21 @@ public class MockGetCitiesUseCase: Domain.GetCitiesUseCase, Cuckoo.ProtocolMock 
         
     }
     
+    
+    
+    public func get(by text: String, completion: @escaping (Result<[CityType]>) -> Void)  {
+        
+    return cuckoo_manager.call("get(by: String, completion: @escaping (Result<[CityType]>) -> Void)",
+            parameters: (text, completion),
+            escapingParameters: (text, completion),
+            superclassCall:
+                
+                Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                ,
+            defaultCall: __defaultImplStub!.get(by: text, completion: completion))
+        
+    }
+    
 
 	public struct __StubbingProxy_GetCitiesUseCase: Cuckoo.StubbingProxy {
 	    private let cuckoo_manager: Cuckoo.MockManager
@@ -155,6 +170,11 @@ public class MockGetCitiesUseCase: Domain.GetCitiesUseCase, Cuckoo.ProtocolMock 
 	    func get<M1: Cuckoo.Matchable>(with completion: M1) -> Cuckoo.ProtocolStubNoReturnFunction<((Result<[CityType]>) -> Void)> where M1.MatchedType == (Result<[CityType]>) -> Void {
 	        let matchers: [Cuckoo.ParameterMatcher<((Result<[CityType]>) -> Void)>] = [wrap(matchable: completion) { $0 }]
 	        return .init(stub: cuckoo_manager.createStub(for: MockGetCitiesUseCase.self, method: "get(with: @escaping (Result<[CityType]>) -> Void)", parameterMatchers: matchers))
+	    }
+	    
+	    func get<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(by text: M1, completion: M2) -> Cuckoo.ProtocolStubNoReturnFunction<(String, (Result<[CityType]>) -> Void)> where M1.MatchedType == String, M2.MatchedType == (Result<[CityType]>) -> Void {
+	        let matchers: [Cuckoo.ParameterMatcher<(String, (Result<[CityType]>) -> Void)>] = [wrap(matchable: text) { $0.0 }, wrap(matchable: completion) { $0.1 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockGetCitiesUseCase.self, method: "get(by: String, completion: @escaping (Result<[CityType]>) -> Void)", parameterMatchers: matchers))
 	    }
 	    
 	}
@@ -179,6 +199,12 @@ public class MockGetCitiesUseCase: Domain.GetCitiesUseCase, Cuckoo.ProtocolMock 
 	        return cuckoo_manager.verify("get(with: @escaping (Result<[CityType]>) -> Void)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
 	    }
 	    
+	    @discardableResult
+	    func get<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(by text: M1, completion: M2) -> Cuckoo.__DoNotUse<(String, (Result<[CityType]>) -> Void), Void> where M1.MatchedType == String, M2.MatchedType == (Result<[CityType]>) -> Void {
+	        let matchers: [Cuckoo.ParameterMatcher<(String, (Result<[CityType]>) -> Void)>] = [wrap(matchable: text) { $0.0 }, wrap(matchable: completion) { $0.1 }]
+	        return cuckoo_manager.verify("get(by: String, completion: @escaping (Result<[CityType]>) -> Void)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
 	}
 }
 
@@ -189,6 +215,10 @@ public class GetCitiesUseCaseStub: Domain.GetCitiesUseCase {
 
     
     public func get(with completion: @escaping (Result<[CityType]>) -> Void)   {
+        return DefaultValueRegistry.defaultValue(for: (Void).self)
+    }
+    
+    public func get(by text: String, completion: @escaping (Result<[CityType]>) -> Void)   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
     
@@ -695,6 +725,21 @@ public class MockUseCaseProvider: Domain.UseCaseProvider, Cuckoo.ProtocolMock {
     
     
     
+    public func makeGetCityUseCase() -> GetCityUseCase {
+        
+    return cuckoo_manager.call("makeGetCityUseCase() -> GetCityUseCase",
+            parameters: (),
+            escapingParameters: (),
+            superclassCall:
+                
+                Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                ,
+            defaultCall: __defaultImplStub!.makeGetCityUseCase())
+        
+    }
+    
+    
+    
     public func makeSaveCitiesUseCase() -> Domain.SaveCitiesUseCase {
         
     return cuckoo_manager.call("makeSaveCitiesUseCase() -> Domain.SaveCitiesUseCase",
@@ -740,6 +785,11 @@ public class MockUseCaseProvider: Domain.UseCaseProvider, Cuckoo.ProtocolMock {
 	    func makeGetCitiesUseCase() -> Cuckoo.ProtocolStubFunction<(), Domain.GetCitiesUseCase> {
 	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
 	        return .init(stub: cuckoo_manager.createStub(for: MockUseCaseProvider.self, method: "makeGetCitiesUseCase() -> Domain.GetCitiesUseCase", parameterMatchers: matchers))
+	    }
+	    
+	    func makeGetCityUseCase() -> Cuckoo.ProtocolStubFunction<(), GetCityUseCase> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return .init(stub: cuckoo_manager.createStub(for: MockUseCaseProvider.self, method: "makeGetCityUseCase() -> GetCityUseCase", parameterMatchers: matchers))
 	    }
 	    
 	    func makeSaveCitiesUseCase() -> Cuckoo.ProtocolStubFunction<(), Domain.SaveCitiesUseCase> {
@@ -794,6 +844,12 @@ public class MockUseCaseProvider: Domain.UseCaseProvider, Cuckoo.ProtocolMock {
 	    }
 	    
 	    @discardableResult
+	    func makeGetCityUseCase() -> Cuckoo.__DoNotUse<(), GetCityUseCase> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return cuckoo_manager.verify("makeGetCityUseCase() -> GetCityUseCase", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
 	    func makeSaveCitiesUseCase() -> Cuckoo.__DoNotUse<(), Domain.SaveCitiesUseCase> {
 	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
 	        return cuckoo_manager.verify("makeSaveCitiesUseCase() -> Domain.SaveCitiesUseCase", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
@@ -826,6 +882,10 @@ public class UseCaseProviderStub: Domain.UseCaseProvider {
     
     public func makeGetCitiesUseCase() -> Domain.GetCitiesUseCase  {
         return DefaultValueRegistry.defaultValue(for: (Domain.GetCitiesUseCase).self)
+    }
+    
+    public func makeGetCityUseCase() -> GetCityUseCase  {
+        return DefaultValueRegistry.defaultValue(for: (GetCityUseCase).self)
     }
     
     public func makeSaveCitiesUseCase() -> Domain.SaveCitiesUseCase  {
@@ -1028,6 +1088,566 @@ import Foundation
     
      func from(_ weather: CityWeatherType) -> CityWeatherPresentableModel  {
         return DefaultValueRegistry.defaultValue(for: (CityWeatherPresentableModel).self)
+    }
+    
+}
+
+
+// MARK: - Mocks generated from file: WeatherForecast/CoordinatorProviders/WeatherForecast.CityListCoordinatorProvider.swift
+
+import Cuckoo
+@testable import WeatherForecast
+
+import Domain
+import Foundation
+
+
+ class MockCityListCoordinatorProviderType: CityListCoordinatorProviderType, Cuckoo.ProtocolMock {
+    
+     typealias MocksType = CityListCoordinatorProviderType
+    
+     typealias Stubbing = __StubbingProxy_CityListCoordinatorProviderType
+     typealias Verification = __VerificationProxy_CityListCoordinatorProviderType
+
+     let cuckoo_manager = Cuckoo.MockManager.preconfiguredManager ?? Cuckoo.MockManager(hasParent: false)
+
+    
+    private var __defaultImplStub: CityListCoordinatorProviderType?
+
+     func enableDefaultImplementation(_ stub: CityListCoordinatorProviderType) {
+        __defaultImplStub = stub
+        cuckoo_manager.enableDefaultStubImplementation()
+    }
+    
+
+    
+
+    
+
+    
+    
+    
+     func makeViewModel() -> CityListViewModelType {
+        
+    return cuckoo_manager.call("makeViewModel() -> CityListViewModelType",
+            parameters: (),
+            escapingParameters: (),
+            superclassCall:
+                
+                Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                ,
+            defaultCall: __defaultImplStub!.makeViewModel())
+        
+    }
+    
+    
+    
+     func makeViewController(viewModel: CityListViewModelType) -> CityListViewController {
+        
+    return cuckoo_manager.call("makeViewController(viewModel: CityListViewModelType) -> CityListViewController",
+            parameters: (viewModel),
+            escapingParameters: (viewModel),
+            superclassCall:
+                
+                Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                ,
+            defaultCall: __defaultImplStub!.makeViewController(viewModel: viewModel))
+        
+    }
+    
+    
+    
+     func makeCityDetailsCoordinator(navigationController: UINavigationController, delegate: CityDetailsCoordinatorDelegate) -> CityDetailsCoordinator {
+        
+    return cuckoo_manager.call("makeCityDetailsCoordinator(navigationController: UINavigationController, delegate: CityDetailsCoordinatorDelegate) -> CityDetailsCoordinator",
+            parameters: (navigationController, delegate),
+            escapingParameters: (navigationController, delegate),
+            superclassCall:
+                
+                Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                ,
+            defaultCall: __defaultImplStub!.makeCityDetailsCoordinator(navigationController: navigationController, delegate: delegate))
+        
+    }
+    
+
+	 struct __StubbingProxy_CityListCoordinatorProviderType: Cuckoo.StubbingProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	
+	     init(manager: Cuckoo.MockManager) {
+	        self.cuckoo_manager = manager
+	    }
+	    
+	    
+	    func makeViewModel() -> Cuckoo.ProtocolStubFunction<(), CityListViewModelType> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return .init(stub: cuckoo_manager.createStub(for: MockCityListCoordinatorProviderType.self, method: "makeViewModel() -> CityListViewModelType", parameterMatchers: matchers))
+	    }
+	    
+	    func makeViewController<M1: Cuckoo.Matchable>(viewModel: M1) -> Cuckoo.ProtocolStubFunction<(CityListViewModelType), CityListViewController> where M1.MatchedType == CityListViewModelType {
+	        let matchers: [Cuckoo.ParameterMatcher<(CityListViewModelType)>] = [wrap(matchable: viewModel) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockCityListCoordinatorProviderType.self, method: "makeViewController(viewModel: CityListViewModelType) -> CityListViewController", parameterMatchers: matchers))
+	    }
+	    
+	    func makeCityDetailsCoordinator<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(navigationController: M1, delegate: M2) -> Cuckoo.ProtocolStubFunction<(UINavigationController, CityDetailsCoordinatorDelegate), CityDetailsCoordinator> where M1.MatchedType == UINavigationController, M2.MatchedType == CityDetailsCoordinatorDelegate {
+	        let matchers: [Cuckoo.ParameterMatcher<(UINavigationController, CityDetailsCoordinatorDelegate)>] = [wrap(matchable: navigationController) { $0.0 }, wrap(matchable: delegate) { $0.1 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockCityListCoordinatorProviderType.self, method: "makeCityDetailsCoordinator(navigationController: UINavigationController, delegate: CityDetailsCoordinatorDelegate) -> CityDetailsCoordinator", parameterMatchers: matchers))
+	    }
+	    
+	}
+
+	 struct __VerificationProxy_CityListCoordinatorProviderType: Cuckoo.VerificationProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	    private let callMatcher: Cuckoo.CallMatcher
+	    private let sourceLocation: Cuckoo.SourceLocation
+	
+	     init(manager: Cuckoo.MockManager, callMatcher: Cuckoo.CallMatcher, sourceLocation: Cuckoo.SourceLocation) {
+	        self.cuckoo_manager = manager
+	        self.callMatcher = callMatcher
+	        self.sourceLocation = sourceLocation
+	    }
+	
+	    
+	
+	    
+	    @discardableResult
+	    func makeViewModel() -> Cuckoo.__DoNotUse<(), CityListViewModelType> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return cuckoo_manager.verify("makeViewModel() -> CityListViewModelType", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func makeViewController<M1: Cuckoo.Matchable>(viewModel: M1) -> Cuckoo.__DoNotUse<(CityListViewModelType), CityListViewController> where M1.MatchedType == CityListViewModelType {
+	        let matchers: [Cuckoo.ParameterMatcher<(CityListViewModelType)>] = [wrap(matchable: viewModel) { $0 }]
+	        return cuckoo_manager.verify("makeViewController(viewModel: CityListViewModelType) -> CityListViewController", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func makeCityDetailsCoordinator<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(navigationController: M1, delegate: M2) -> Cuckoo.__DoNotUse<(UINavigationController, CityDetailsCoordinatorDelegate), CityDetailsCoordinator> where M1.MatchedType == UINavigationController, M2.MatchedType == CityDetailsCoordinatorDelegate {
+	        let matchers: [Cuckoo.ParameterMatcher<(UINavigationController, CityDetailsCoordinatorDelegate)>] = [wrap(matchable: navigationController) { $0.0 }, wrap(matchable: delegate) { $0.1 }]
+	        return cuckoo_manager.verify("makeCityDetailsCoordinator(navigationController: UINavigationController, delegate: CityDetailsCoordinatorDelegate) -> CityDetailsCoordinator", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	}
+}
+
+ class CityListCoordinatorProviderTypeStub: CityListCoordinatorProviderType {
+    
+
+    
+
+    
+     func makeViewModel() -> CityListViewModelType  {
+        return DefaultValueRegistry.defaultValue(for: (CityListViewModelType).self)
+    }
+    
+     func makeViewController(viewModel: CityListViewModelType) -> CityListViewController  {
+        return DefaultValueRegistry.defaultValue(for: (CityListViewController).self)
+    }
+    
+     func makeCityDetailsCoordinator(navigationController: UINavigationController, delegate: CityDetailsCoordinatorDelegate) -> CityDetailsCoordinator  {
+        return DefaultValueRegistry.defaultValue(for: (CityDetailsCoordinator).self)
+    }
+    
+}
+
+
+
+ class MockCityListCoordinatorProvider: WeatherForecast.CityListCoordinatorProvider, Cuckoo.ClassMock {
+    
+     typealias MocksType = WeatherForecast.CityListCoordinatorProvider
+    
+     typealias Stubbing = __StubbingProxy_CityListCoordinatorProvider
+     typealias Verification = __VerificationProxy_CityListCoordinatorProvider
+
+     let cuckoo_manager = Cuckoo.MockManager.preconfiguredManager ?? Cuckoo.MockManager(hasParent: true)
+
+    
+    private var __defaultImplStub: WeatherForecast.CityListCoordinatorProvider?
+
+     func enableDefaultImplementation(_ stub: WeatherForecast.CityListCoordinatorProvider) {
+        __defaultImplStub = stub
+        cuckoo_manager.enableDefaultStubImplementation()
+    }
+    
+
+    
+
+    
+
+    
+    
+    
+     override func makeViewModel() -> CityListViewModelType {
+        
+    return cuckoo_manager.call("makeViewModel() -> CityListViewModelType",
+            parameters: (),
+            escapingParameters: (),
+            superclassCall:
+                
+                super.makeViewModel()
+                ,
+            defaultCall: __defaultImplStub!.makeViewModel())
+        
+    }
+    
+    
+    
+     override func makeViewController(viewModel: CityListViewModelType) -> CityListViewController {
+        
+    return cuckoo_manager.call("makeViewController(viewModel: CityListViewModelType) -> CityListViewController",
+            parameters: (viewModel),
+            escapingParameters: (viewModel),
+            superclassCall:
+                
+                super.makeViewController(viewModel: viewModel)
+                ,
+            defaultCall: __defaultImplStub!.makeViewController(viewModel: viewModel))
+        
+    }
+    
+    
+    
+     override func makeCityDetailsCoordinator(navigationController: UINavigationController, delegate: CityDetailsCoordinatorDelegate) -> CityDetailsCoordinator {
+        
+    return cuckoo_manager.call("makeCityDetailsCoordinator(navigationController: UINavigationController, delegate: CityDetailsCoordinatorDelegate) -> CityDetailsCoordinator",
+            parameters: (navigationController, delegate),
+            escapingParameters: (navigationController, delegate),
+            superclassCall:
+                
+                super.makeCityDetailsCoordinator(navigationController: navigationController, delegate: delegate)
+                ,
+            defaultCall: __defaultImplStub!.makeCityDetailsCoordinator(navigationController: navigationController, delegate: delegate))
+        
+    }
+    
+
+	 struct __StubbingProxy_CityListCoordinatorProvider: Cuckoo.StubbingProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	
+	     init(manager: Cuckoo.MockManager) {
+	        self.cuckoo_manager = manager
+	    }
+	    
+	    
+	    func makeViewModel() -> Cuckoo.ClassStubFunction<(), CityListViewModelType> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return .init(stub: cuckoo_manager.createStub(for: MockCityListCoordinatorProvider.self, method: "makeViewModel() -> CityListViewModelType", parameterMatchers: matchers))
+	    }
+	    
+	    func makeViewController<M1: Cuckoo.Matchable>(viewModel: M1) -> Cuckoo.ClassStubFunction<(CityListViewModelType), CityListViewController> where M1.MatchedType == CityListViewModelType {
+	        let matchers: [Cuckoo.ParameterMatcher<(CityListViewModelType)>] = [wrap(matchable: viewModel) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockCityListCoordinatorProvider.self, method: "makeViewController(viewModel: CityListViewModelType) -> CityListViewController", parameterMatchers: matchers))
+	    }
+	    
+	    func makeCityDetailsCoordinator<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(navigationController: M1, delegate: M2) -> Cuckoo.ClassStubFunction<(UINavigationController, CityDetailsCoordinatorDelegate), CityDetailsCoordinator> where M1.MatchedType == UINavigationController, M2.MatchedType == CityDetailsCoordinatorDelegate {
+	        let matchers: [Cuckoo.ParameterMatcher<(UINavigationController, CityDetailsCoordinatorDelegate)>] = [wrap(matchable: navigationController) { $0.0 }, wrap(matchable: delegate) { $0.1 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockCityListCoordinatorProvider.self, method: "makeCityDetailsCoordinator(navigationController: UINavigationController, delegate: CityDetailsCoordinatorDelegate) -> CityDetailsCoordinator", parameterMatchers: matchers))
+	    }
+	    
+	}
+
+	 struct __VerificationProxy_CityListCoordinatorProvider: Cuckoo.VerificationProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	    private let callMatcher: Cuckoo.CallMatcher
+	    private let sourceLocation: Cuckoo.SourceLocation
+	
+	     init(manager: Cuckoo.MockManager, callMatcher: Cuckoo.CallMatcher, sourceLocation: Cuckoo.SourceLocation) {
+	        self.cuckoo_manager = manager
+	        self.callMatcher = callMatcher
+	        self.sourceLocation = sourceLocation
+	    }
+	
+	    
+	
+	    
+	    @discardableResult
+	    func makeViewModel() -> Cuckoo.__DoNotUse<(), CityListViewModelType> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return cuckoo_manager.verify("makeViewModel() -> CityListViewModelType", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func makeViewController<M1: Cuckoo.Matchable>(viewModel: M1) -> Cuckoo.__DoNotUse<(CityListViewModelType), CityListViewController> where M1.MatchedType == CityListViewModelType {
+	        let matchers: [Cuckoo.ParameterMatcher<(CityListViewModelType)>] = [wrap(matchable: viewModel) { $0 }]
+	        return cuckoo_manager.verify("makeViewController(viewModel: CityListViewModelType) -> CityListViewController", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func makeCityDetailsCoordinator<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(navigationController: M1, delegate: M2) -> Cuckoo.__DoNotUse<(UINavigationController, CityDetailsCoordinatorDelegate), CityDetailsCoordinator> where M1.MatchedType == UINavigationController, M2.MatchedType == CityDetailsCoordinatorDelegate {
+	        let matchers: [Cuckoo.ParameterMatcher<(UINavigationController, CityDetailsCoordinatorDelegate)>] = [wrap(matchable: navigationController) { $0.0 }, wrap(matchable: delegate) { $0.1 }]
+	        return cuckoo_manager.verify("makeCityDetailsCoordinator(navigationController: UINavigationController, delegate: CityDetailsCoordinatorDelegate) -> CityDetailsCoordinator", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	}
+}
+
+ class CityListCoordinatorProviderStub: WeatherForecast.CityListCoordinatorProvider {
+    
+
+    
+
+    
+     override func makeViewModel() -> CityListViewModelType  {
+        return DefaultValueRegistry.defaultValue(for: (CityListViewModelType).self)
+    }
+    
+     override func makeViewController(viewModel: CityListViewModelType) -> CityListViewController  {
+        return DefaultValueRegistry.defaultValue(for: (CityListViewController).self)
+    }
+    
+     override func makeCityDetailsCoordinator(navigationController: UINavigationController, delegate: CityDetailsCoordinatorDelegate) -> CityDetailsCoordinator  {
+        return DefaultValueRegistry.defaultValue(for: (CityDetailsCoordinator).self)
+    }
+    
+}
+
+
+// MARK: - Mocks generated from file: WeatherForecast/CoordinatorProviders/WeatherForecast.RootCoordinatorProvider.swift
+
+import Cuckoo
+@testable import WeatherForecast
+
+import Domain
+import Foundation
+
+
+ class MockRootCoordinatorProviderType: RootCoordinatorProviderType, Cuckoo.ProtocolMock {
+    
+     typealias MocksType = RootCoordinatorProviderType
+    
+     typealias Stubbing = __StubbingProxy_RootCoordinatorProviderType
+     typealias Verification = __VerificationProxy_RootCoordinatorProviderType
+
+     let cuckoo_manager = Cuckoo.MockManager.preconfiguredManager ?? Cuckoo.MockManager(hasParent: false)
+
+    
+    private var __defaultImplStub: RootCoordinatorProviderType?
+
+     func enableDefaultImplementation(_ stub: RootCoordinatorProviderType) {
+        __defaultImplStub = stub
+        cuckoo_manager.enableDefaultStubImplementation()
+    }
+    
+
+    
+
+    
+
+    
+    
+    
+     func makeSplashCoordinator(window: UIWindow, delegate: SplashCoordinatorDelegate) -> WeatherForecast.SplashCoordinator {
+        
+    return cuckoo_manager.call("makeSplashCoordinator(window: UIWindow, delegate: SplashCoordinatorDelegate) -> WeatherForecast.SplashCoordinator",
+            parameters: (window, delegate),
+            escapingParameters: (window, delegate),
+            superclassCall:
+                
+                Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                ,
+            defaultCall: __defaultImplStub!.makeSplashCoordinator(window: window, delegate: delegate))
+        
+    }
+    
+    
+    
+     func makeCityListCoordinator(navigationController: UINavigationController) -> WeatherForecast.CityListCoordinator {
+        
+    return cuckoo_manager.call("makeCityListCoordinator(navigationController: UINavigationController) -> WeatherForecast.CityListCoordinator",
+            parameters: (navigationController),
+            escapingParameters: (navigationController),
+            superclassCall:
+                
+                Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                ,
+            defaultCall: __defaultImplStub!.makeCityListCoordinator(navigationController: navigationController))
+        
+    }
+    
+
+	 struct __StubbingProxy_RootCoordinatorProviderType: Cuckoo.StubbingProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	
+	     init(manager: Cuckoo.MockManager) {
+	        self.cuckoo_manager = manager
+	    }
+	    
+	    
+	    func makeSplashCoordinator<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(window: M1, delegate: M2) -> Cuckoo.ProtocolStubFunction<(UIWindow, SplashCoordinatorDelegate), WeatherForecast.SplashCoordinator> where M1.MatchedType == UIWindow, M2.MatchedType == SplashCoordinatorDelegate {
+	        let matchers: [Cuckoo.ParameterMatcher<(UIWindow, SplashCoordinatorDelegate)>] = [wrap(matchable: window) { $0.0 }, wrap(matchable: delegate) { $0.1 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockRootCoordinatorProviderType.self, method: "makeSplashCoordinator(window: UIWindow, delegate: SplashCoordinatorDelegate) -> WeatherForecast.SplashCoordinator", parameterMatchers: matchers))
+	    }
+	    
+	    func makeCityListCoordinator<M1: Cuckoo.Matchable>(navigationController: M1) -> Cuckoo.ProtocolStubFunction<(UINavigationController), WeatherForecast.CityListCoordinator> where M1.MatchedType == UINavigationController {
+	        let matchers: [Cuckoo.ParameterMatcher<(UINavigationController)>] = [wrap(matchable: navigationController) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockRootCoordinatorProviderType.self, method: "makeCityListCoordinator(navigationController: UINavigationController) -> WeatherForecast.CityListCoordinator", parameterMatchers: matchers))
+	    }
+	    
+	}
+
+	 struct __VerificationProxy_RootCoordinatorProviderType: Cuckoo.VerificationProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	    private let callMatcher: Cuckoo.CallMatcher
+	    private let sourceLocation: Cuckoo.SourceLocation
+	
+	     init(manager: Cuckoo.MockManager, callMatcher: Cuckoo.CallMatcher, sourceLocation: Cuckoo.SourceLocation) {
+	        self.cuckoo_manager = manager
+	        self.callMatcher = callMatcher
+	        self.sourceLocation = sourceLocation
+	    }
+	
+	    
+	
+	    
+	    @discardableResult
+	    func makeSplashCoordinator<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(window: M1, delegate: M2) -> Cuckoo.__DoNotUse<(UIWindow, SplashCoordinatorDelegate), WeatherForecast.SplashCoordinator> where M1.MatchedType == UIWindow, M2.MatchedType == SplashCoordinatorDelegate {
+	        let matchers: [Cuckoo.ParameterMatcher<(UIWindow, SplashCoordinatorDelegate)>] = [wrap(matchable: window) { $0.0 }, wrap(matchable: delegate) { $0.1 }]
+	        return cuckoo_manager.verify("makeSplashCoordinator(window: UIWindow, delegate: SplashCoordinatorDelegate) -> WeatherForecast.SplashCoordinator", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func makeCityListCoordinator<M1: Cuckoo.Matchable>(navigationController: M1) -> Cuckoo.__DoNotUse<(UINavigationController), WeatherForecast.CityListCoordinator> where M1.MatchedType == UINavigationController {
+	        let matchers: [Cuckoo.ParameterMatcher<(UINavigationController)>] = [wrap(matchable: navigationController) { $0 }]
+	        return cuckoo_manager.verify("makeCityListCoordinator(navigationController: UINavigationController) -> WeatherForecast.CityListCoordinator", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	}
+}
+
+ class RootCoordinatorProviderTypeStub: RootCoordinatorProviderType {
+    
+
+    
+
+    
+     func makeSplashCoordinator(window: UIWindow, delegate: SplashCoordinatorDelegate) -> WeatherForecast.SplashCoordinator  {
+        return DefaultValueRegistry.defaultValue(for: (WeatherForecast.SplashCoordinator).self)
+    }
+    
+     func makeCityListCoordinator(navigationController: UINavigationController) -> WeatherForecast.CityListCoordinator  {
+        return DefaultValueRegistry.defaultValue(for: (WeatherForecast.CityListCoordinator).self)
+    }
+    
+}
+
+
+
+ class MockRootCoordinatorProvider: WeatherForecast.RootCoordinatorProvider, Cuckoo.ClassMock {
+    
+     typealias MocksType = WeatherForecast.RootCoordinatorProvider
+    
+     typealias Stubbing = __StubbingProxy_RootCoordinatorProvider
+     typealias Verification = __VerificationProxy_RootCoordinatorProvider
+
+     let cuckoo_manager = Cuckoo.MockManager.preconfiguredManager ?? Cuckoo.MockManager(hasParent: true)
+
+    
+    private var __defaultImplStub: WeatherForecast.RootCoordinatorProvider?
+
+     func enableDefaultImplementation(_ stub: WeatherForecast.RootCoordinatorProvider) {
+        __defaultImplStub = stub
+        cuckoo_manager.enableDefaultStubImplementation()
+    }
+    
+
+    
+
+    
+
+    
+    
+    
+     override func makeSplashCoordinator(window: UIWindow, delegate: SplashCoordinatorDelegate) -> WeatherForecast.SplashCoordinator {
+        
+    return cuckoo_manager.call("makeSplashCoordinator(window: UIWindow, delegate: SplashCoordinatorDelegate) -> WeatherForecast.SplashCoordinator",
+            parameters: (window, delegate),
+            escapingParameters: (window, delegate),
+            superclassCall:
+                
+                super.makeSplashCoordinator(window: window, delegate: delegate)
+                ,
+            defaultCall: __defaultImplStub!.makeSplashCoordinator(window: window, delegate: delegate))
+        
+    }
+    
+    
+    
+     override func makeCityListCoordinator(navigationController: UINavigationController) -> WeatherForecast.CityListCoordinator {
+        
+    return cuckoo_manager.call("makeCityListCoordinator(navigationController: UINavigationController) -> WeatherForecast.CityListCoordinator",
+            parameters: (navigationController),
+            escapingParameters: (navigationController),
+            superclassCall:
+                
+                super.makeCityListCoordinator(navigationController: navigationController)
+                ,
+            defaultCall: __defaultImplStub!.makeCityListCoordinator(navigationController: navigationController))
+        
+    }
+    
+
+	 struct __StubbingProxy_RootCoordinatorProvider: Cuckoo.StubbingProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	
+	     init(manager: Cuckoo.MockManager) {
+	        self.cuckoo_manager = manager
+	    }
+	    
+	    
+	    func makeSplashCoordinator<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(window: M1, delegate: M2) -> Cuckoo.ClassStubFunction<(UIWindow, SplashCoordinatorDelegate), WeatherForecast.SplashCoordinator> where M1.MatchedType == UIWindow, M2.MatchedType == SplashCoordinatorDelegate {
+	        let matchers: [Cuckoo.ParameterMatcher<(UIWindow, SplashCoordinatorDelegate)>] = [wrap(matchable: window) { $0.0 }, wrap(matchable: delegate) { $0.1 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockRootCoordinatorProvider.self, method: "makeSplashCoordinator(window: UIWindow, delegate: SplashCoordinatorDelegate) -> WeatherForecast.SplashCoordinator", parameterMatchers: matchers))
+	    }
+	    
+	    func makeCityListCoordinator<M1: Cuckoo.Matchable>(navigationController: M1) -> Cuckoo.ClassStubFunction<(UINavigationController), WeatherForecast.CityListCoordinator> where M1.MatchedType == UINavigationController {
+	        let matchers: [Cuckoo.ParameterMatcher<(UINavigationController)>] = [wrap(matchable: navigationController) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockRootCoordinatorProvider.self, method: "makeCityListCoordinator(navigationController: UINavigationController) -> WeatherForecast.CityListCoordinator", parameterMatchers: matchers))
+	    }
+	    
+	}
+
+	 struct __VerificationProxy_RootCoordinatorProvider: Cuckoo.VerificationProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	    private let callMatcher: Cuckoo.CallMatcher
+	    private let sourceLocation: Cuckoo.SourceLocation
+	
+	     init(manager: Cuckoo.MockManager, callMatcher: Cuckoo.CallMatcher, sourceLocation: Cuckoo.SourceLocation) {
+	        self.cuckoo_manager = manager
+	        self.callMatcher = callMatcher
+	        self.sourceLocation = sourceLocation
+	    }
+	
+	    
+	
+	    
+	    @discardableResult
+	    func makeSplashCoordinator<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(window: M1, delegate: M2) -> Cuckoo.__DoNotUse<(UIWindow, SplashCoordinatorDelegate), WeatherForecast.SplashCoordinator> where M1.MatchedType == UIWindow, M2.MatchedType == SplashCoordinatorDelegate {
+	        let matchers: [Cuckoo.ParameterMatcher<(UIWindow, SplashCoordinatorDelegate)>] = [wrap(matchable: window) { $0.0 }, wrap(matchable: delegate) { $0.1 }]
+	        return cuckoo_manager.verify("makeSplashCoordinator(window: UIWindow, delegate: SplashCoordinatorDelegate) -> WeatherForecast.SplashCoordinator", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func makeCityListCoordinator<M1: Cuckoo.Matchable>(navigationController: M1) -> Cuckoo.__DoNotUse<(UINavigationController), WeatherForecast.CityListCoordinator> where M1.MatchedType == UINavigationController {
+	        let matchers: [Cuckoo.ParameterMatcher<(UINavigationController)>] = [wrap(matchable: navigationController) { $0 }]
+	        return cuckoo_manager.verify("makeCityListCoordinator(navigationController: UINavigationController) -> WeatherForecast.CityListCoordinator", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	}
+}
+
+ class RootCoordinatorProviderStub: WeatherForecast.RootCoordinatorProvider {
+    
+
+    
+
+    
+     override func makeSplashCoordinator(window: UIWindow, delegate: SplashCoordinatorDelegate) -> WeatherForecast.SplashCoordinator  {
+        return DefaultValueRegistry.defaultValue(for: (WeatherForecast.SplashCoordinator).self)
+    }
+    
+     override func makeCityListCoordinator(navigationController: UINavigationController) -> WeatherForecast.CityListCoordinator  {
+        return DefaultValueRegistry.defaultValue(for: (WeatherForecast.CityListCoordinator).self)
     }
     
 }
@@ -1278,6 +1898,106 @@ import Foundation
     
      override func makeViewController(viewModel: SplashViewModelType) -> SplashViewController  {
         return DefaultValueRegistry.defaultValue(for: (SplashViewController).self)
+    }
+    
+}
+
+
+// MARK: - Mocks generated from file: WeatherForecast/Coordinators/WeatherForecast.CityListCoordinator.swift
+
+import Cuckoo
+@testable import WeatherForecast
+
+import Domain
+import Foundation
+import UIKit
+
+
+ class MockCityListCoordinator: WeatherForecast.CityListCoordinator, Cuckoo.ClassMock {
+    
+     typealias MocksType = WeatherForecast.CityListCoordinator
+    
+     typealias Stubbing = __StubbingProxy_CityListCoordinator
+     typealias Verification = __VerificationProxy_CityListCoordinator
+
+     let cuckoo_manager = Cuckoo.MockManager.preconfiguredManager ?? Cuckoo.MockManager(hasParent: true)
+
+    
+    private var __defaultImplStub: WeatherForecast.CityListCoordinator?
+
+     func enableDefaultImplementation(_ stub: WeatherForecast.CityListCoordinator) {
+        __defaultImplStub = stub
+        cuckoo_manager.enableDefaultStubImplementation()
+    }
+    
+
+    
+
+    
+
+    
+    
+    
+     override func start()  {
+        
+    return cuckoo_manager.call("start()",
+            parameters: (),
+            escapingParameters: (),
+            superclassCall:
+                
+                super.start()
+                ,
+            defaultCall: __defaultImplStub!.start())
+        
+    }
+    
+
+	 struct __StubbingProxy_CityListCoordinator: Cuckoo.StubbingProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	
+	     init(manager: Cuckoo.MockManager) {
+	        self.cuckoo_manager = manager
+	    }
+	    
+	    
+	    func start() -> Cuckoo.ClassStubNoReturnFunction<()> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return .init(stub: cuckoo_manager.createStub(for: MockCityListCoordinator.self, method: "start()", parameterMatchers: matchers))
+	    }
+	    
+	}
+
+	 struct __VerificationProxy_CityListCoordinator: Cuckoo.VerificationProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	    private let callMatcher: Cuckoo.CallMatcher
+	    private let sourceLocation: Cuckoo.SourceLocation
+	
+	     init(manager: Cuckoo.MockManager, callMatcher: Cuckoo.CallMatcher, sourceLocation: Cuckoo.SourceLocation) {
+	        self.cuckoo_manager = manager
+	        self.callMatcher = callMatcher
+	        self.sourceLocation = sourceLocation
+	    }
+	
+	    
+	
+	    
+	    @discardableResult
+	    func start() -> Cuckoo.__DoNotUse<(), Void> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return cuckoo_manager.verify("start()", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	}
+}
+
+ class CityListCoordinatorStub: WeatherForecast.CityListCoordinator {
+    
+
+    
+
+    
+     override func start()   {
+        return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
     
 }

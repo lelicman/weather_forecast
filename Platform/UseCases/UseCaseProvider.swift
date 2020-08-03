@@ -37,6 +37,10 @@ public class UseCaseProvider: Domain.UseCaseProvider {
     return GetCitiesUseCase(repository: cityRepository)
   }
 
+  public func makeGetCityUseCase() -> Domain.GetCityUseCase {
+    return GetCityUseCase(repository: cityRepository)
+  }
+
   public func makeSaveCitiesUseCase() -> Domain.SaveCitiesUseCase {
     return SaveCitiesUseCase(repository: cityRepository)
   }

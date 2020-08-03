@@ -16,7 +16,8 @@ class CityListCoordinatorProvider: CityListCoordinatorProviderType {
   }
 
   func makeViewModel() -> CityListViewModelType {
-    return CityListViewModel(getCitiesUseCase: useCaseProvider.makeGetCitiesUseCase())
+    return CityListViewModel(getCitiesUseCase: useCaseProvider.makeGetCitiesUseCase(),
+                             getCityUseCase: useCaseProvider.makeGetCityUseCase())
   }
 
   func makeViewController(viewModel: CityListViewModelType) -> CityListViewController {

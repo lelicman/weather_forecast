@@ -681,6 +681,21 @@ import Foundation
         
     }
     
+    
+    
+     func from(model: RealmCity) -> CityType {
+        
+    return cuckoo_manager.call("from(model: RealmCity) -> CityType",
+            parameters: (model),
+            escapingParameters: (model),
+            superclassCall:
+                
+                Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                ,
+            defaultCall: __defaultImplStub!.from(model: model))
+        
+    }
+    
 
 	 struct __StubbingProxy_CityConverterType: Cuckoo.StubbingProxy {
 	    private let cuckoo_manager: Cuckoo.MockManager
@@ -698,6 +713,11 @@ import Foundation
 	    func from<M1: Cuckoo.Matchable>(models: M1) -> Cuckoo.ProtocolStubFunction<([RealmCity]), [CityType]> where M1.MatchedType == [RealmCity] {
 	        let matchers: [Cuckoo.ParameterMatcher<([RealmCity])>] = [wrap(matchable: models) { $0 }]
 	        return .init(stub: cuckoo_manager.createStub(for: MockCityConverterType.self, method: "from(models: [RealmCity]) -> [CityType]", parameterMatchers: matchers))
+	    }
+	    
+	    func from<M1: Cuckoo.Matchable>(model: M1) -> Cuckoo.ProtocolStubFunction<(RealmCity), CityType> where M1.MatchedType == RealmCity {
+	        let matchers: [Cuckoo.ParameterMatcher<(RealmCity)>] = [wrap(matchable: model) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockCityConverterType.self, method: "from(model: RealmCity) -> CityType", parameterMatchers: matchers))
 	    }
 	    
 	}
@@ -728,6 +748,12 @@ import Foundation
 	        return cuckoo_manager.verify("from(models: [RealmCity]) -> [CityType]", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
 	    }
 	    
+	    @discardableResult
+	    func from<M1: Cuckoo.Matchable>(model: M1) -> Cuckoo.__DoNotUse<(RealmCity), CityType> where M1.MatchedType == RealmCity {
+	        let matchers: [Cuckoo.ParameterMatcher<(RealmCity)>] = [wrap(matchable: model) { $0 }]
+	        return cuckoo_manager.verify("from(model: RealmCity) -> CityType", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
 	}
 }
 
@@ -743,6 +769,10 @@ import Foundation
     
      func from(models: [RealmCity]) -> [CityType]  {
         return DefaultValueRegistry.defaultValue(for: ([CityType]).self)
+    }
+    
+     func from(model: RealmCity) -> CityType  {
+        return DefaultValueRegistry.defaultValue(for: (CityType).self)
     }
     
 }
@@ -802,6 +832,21 @@ import Foundation
         
     }
     
+    
+    
+     override func from(model: RealmCity) -> CityType {
+        
+    return cuckoo_manager.call("from(model: RealmCity) -> CityType",
+            parameters: (model),
+            escapingParameters: (model),
+            superclassCall:
+                
+                super.from(model: model)
+                ,
+            defaultCall: __defaultImplStub!.from(model: model))
+        
+    }
+    
 
 	 struct __StubbingProxy_CityConverter: Cuckoo.StubbingProxy {
 	    private let cuckoo_manager: Cuckoo.MockManager
@@ -819,6 +864,11 @@ import Foundation
 	    func from<M1: Cuckoo.Matchable>(models: M1) -> Cuckoo.ClassStubFunction<([RealmCity]), [CityType]> where M1.MatchedType == [RealmCity] {
 	        let matchers: [Cuckoo.ParameterMatcher<([RealmCity])>] = [wrap(matchable: models) { $0 }]
 	        return .init(stub: cuckoo_manager.createStub(for: MockCityConverter.self, method: "from(models: [RealmCity]) -> [CityType]", parameterMatchers: matchers))
+	    }
+	    
+	    func from<M1: Cuckoo.Matchable>(model: M1) -> Cuckoo.ClassStubFunction<(RealmCity), CityType> where M1.MatchedType == RealmCity {
+	        let matchers: [Cuckoo.ParameterMatcher<(RealmCity)>] = [wrap(matchable: model) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockCityConverter.self, method: "from(model: RealmCity) -> CityType", parameterMatchers: matchers))
 	    }
 	    
 	}
@@ -849,6 +899,12 @@ import Foundation
 	        return cuckoo_manager.verify("from(models: [RealmCity]) -> [CityType]", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
 	    }
 	    
+	    @discardableResult
+	    func from<M1: Cuckoo.Matchable>(model: M1) -> Cuckoo.__DoNotUse<(RealmCity), CityType> where M1.MatchedType == RealmCity {
+	        let matchers: [Cuckoo.ParameterMatcher<(RealmCity)>] = [wrap(matchable: model) { $0 }]
+	        return cuckoo_manager.verify("from(model: RealmCity) -> CityType", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
 	}
 }
 
@@ -864,6 +920,10 @@ import Foundation
     
      override func from(models: [RealmCity]) -> [CityType]  {
         return DefaultValueRegistry.defaultValue(for: ([CityType]).self)
+    }
+    
+     override func from(model: RealmCity) -> CityType  {
+        return DefaultValueRegistry.defaultValue(for: (CityType).self)
     }
     
 }
@@ -1300,6 +1360,21 @@ import RealmSwift
     
     
     
+     func getCities(by text: String, completion: @escaping (Result<[CityType]>) -> Void)  {
+        
+    return cuckoo_manager.call("getCities(by: String, completion: @escaping (Result<[CityType]>) -> Void)",
+            parameters: (text, completion),
+            escapingParameters: (text, completion),
+            superclassCall:
+                
+                Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                ,
+            defaultCall: __defaultImplStub!.getCities(by: text, completion: completion))
+        
+    }
+    
+    
+    
      func setCities(_ cities: [CityType], with completion: @escaping (Result<Void>) -> Void)  {
         
     return cuckoo_manager.call("setCities(_: [CityType], with: @escaping (Result<Void>) -> Void)",
@@ -1310,6 +1385,21 @@ import RealmSwift
                 Cuckoo.MockManager.crashOnProtocolSuperclassCall()
                 ,
             defaultCall: __defaultImplStub!.setCities(cities, with: completion))
+        
+    }
+    
+    
+    
+     func get(by id: CityType.Identifier, completion: @escaping (Result<CityType>) -> Void)  {
+        
+    return cuckoo_manager.call("get(by: CityType.Identifier, completion: @escaping (Result<CityType>) -> Void)",
+            parameters: (id, completion),
+            escapingParameters: (id, completion),
+            superclassCall:
+                
+                Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                ,
+            defaultCall: __defaultImplStub!.get(by: id, completion: completion))
         
     }
     
@@ -1327,9 +1417,19 @@ import RealmSwift
 	        return .init(stub: cuckoo_manager.createStub(for: MockCityRepositoryProtocol.self, method: "getCities(with: @escaping (Result<[CityType]>) -> Void)", parameterMatchers: matchers))
 	    }
 	    
+	    func getCities<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(by text: M1, completion: M2) -> Cuckoo.ProtocolStubNoReturnFunction<(String, (Result<[CityType]>) -> Void)> where M1.MatchedType == String, M2.MatchedType == (Result<[CityType]>) -> Void {
+	        let matchers: [Cuckoo.ParameterMatcher<(String, (Result<[CityType]>) -> Void)>] = [wrap(matchable: text) { $0.0 }, wrap(matchable: completion) { $0.1 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockCityRepositoryProtocol.self, method: "getCities(by: String, completion: @escaping (Result<[CityType]>) -> Void)", parameterMatchers: matchers))
+	    }
+	    
 	    func setCities<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(_ cities: M1, with completion: M2) -> Cuckoo.ProtocolStubNoReturnFunction<([CityType], (Result<Void>) -> Void)> where M1.MatchedType == [CityType], M2.MatchedType == (Result<Void>) -> Void {
 	        let matchers: [Cuckoo.ParameterMatcher<([CityType], (Result<Void>) -> Void)>] = [wrap(matchable: cities) { $0.0 }, wrap(matchable: completion) { $0.1 }]
 	        return .init(stub: cuckoo_manager.createStub(for: MockCityRepositoryProtocol.self, method: "setCities(_: [CityType], with: @escaping (Result<Void>) -> Void)", parameterMatchers: matchers))
+	    }
+	    
+	    func get<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(by id: M1, completion: M2) -> Cuckoo.ProtocolStubNoReturnFunction<(CityType.Identifier, (Result<CityType>) -> Void)> where M1.MatchedType == CityType.Identifier, M2.MatchedType == (Result<CityType>) -> Void {
+	        let matchers: [Cuckoo.ParameterMatcher<(CityType.Identifier, (Result<CityType>) -> Void)>] = [wrap(matchable: id) { $0.0 }, wrap(matchable: completion) { $0.1 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockCityRepositoryProtocol.self, method: "get(by: CityType.Identifier, completion: @escaping (Result<CityType>) -> Void)", parameterMatchers: matchers))
 	    }
 	    
 	}
@@ -1355,9 +1455,21 @@ import RealmSwift
 	    }
 	    
 	    @discardableResult
+	    func getCities<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(by text: M1, completion: M2) -> Cuckoo.__DoNotUse<(String, (Result<[CityType]>) -> Void), Void> where M1.MatchedType == String, M2.MatchedType == (Result<[CityType]>) -> Void {
+	        let matchers: [Cuckoo.ParameterMatcher<(String, (Result<[CityType]>) -> Void)>] = [wrap(matchable: text) { $0.0 }, wrap(matchable: completion) { $0.1 }]
+	        return cuckoo_manager.verify("getCities(by: String, completion: @escaping (Result<[CityType]>) -> Void)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
 	    func setCities<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(_ cities: M1, with completion: M2) -> Cuckoo.__DoNotUse<([CityType], (Result<Void>) -> Void), Void> where M1.MatchedType == [CityType], M2.MatchedType == (Result<Void>) -> Void {
 	        let matchers: [Cuckoo.ParameterMatcher<([CityType], (Result<Void>) -> Void)>] = [wrap(matchable: cities) { $0.0 }, wrap(matchable: completion) { $0.1 }]
 	        return cuckoo_manager.verify("setCities(_: [CityType], with: @escaping (Result<Void>) -> Void)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func get<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(by id: M1, completion: M2) -> Cuckoo.__DoNotUse<(CityType.Identifier, (Result<CityType>) -> Void), Void> where M1.MatchedType == CityType.Identifier, M2.MatchedType == (Result<CityType>) -> Void {
+	        let matchers: [Cuckoo.ParameterMatcher<(CityType.Identifier, (Result<CityType>) -> Void)>] = [wrap(matchable: id) { $0.0 }, wrap(matchable: completion) { $0.1 }]
+	        return cuckoo_manager.verify("get(by: CityType.Identifier, completion: @escaping (Result<CityType>) -> Void)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
 	    }
 	    
 	}
@@ -1373,7 +1485,15 @@ import RealmSwift
         return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
     
+     func getCities(by text: String, completion: @escaping (Result<[CityType]>) -> Void)   {
+        return DefaultValueRegistry.defaultValue(for: (Void).self)
+    }
+    
      func setCities(_ cities: [CityType], with completion: @escaping (Result<Void>) -> Void)   {
+        return DefaultValueRegistry.defaultValue(for: (Void).self)
+    }
+    
+     func get(by id: CityType.Identifier, completion: @escaping (Result<CityType>) -> Void)   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
     
@@ -1406,6 +1526,21 @@ import RealmSwift
     
     
     
+     override func get(by id: CityType.Identifier, completion: @escaping (Result<CityType>) -> Void)  {
+        
+    return cuckoo_manager.call("get(by: CityType.Identifier, completion: @escaping (Result<CityType>) -> Void)",
+            parameters: (id, completion),
+            escapingParameters: (id, completion),
+            superclassCall:
+                
+                super.get(by: id, completion: completion)
+                ,
+            defaultCall: __defaultImplStub!.get(by: id, completion: completion))
+        
+    }
+    
+    
+    
      override func getCities(with completion: @escaping (Result<[CityType]>) -> Void)  {
         
     return cuckoo_manager.call("getCities(with: @escaping (Result<[CityType]>) -> Void)",
@@ -1416,6 +1551,21 @@ import RealmSwift
                 super.getCities(with: completion)
                 ,
             defaultCall: __defaultImplStub!.getCities(with: completion))
+        
+    }
+    
+    
+    
+     override func getCities(by text: String, completion: @escaping (Result<[CityType]>) -> Void)  {
+        
+    return cuckoo_manager.call("getCities(by: String, completion: @escaping (Result<[CityType]>) -> Void)",
+            parameters: (text, completion),
+            escapingParameters: (text, completion),
+            superclassCall:
+                
+                super.getCities(by: text, completion: completion)
+                ,
+            defaultCall: __defaultImplStub!.getCities(by: text, completion: completion))
         
     }
     
@@ -1443,9 +1593,19 @@ import RealmSwift
 	    }
 	    
 	    
+	    func get<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(by id: M1, completion: M2) -> Cuckoo.ClassStubNoReturnFunction<(CityType.Identifier, (Result<CityType>) -> Void)> where M1.MatchedType == CityType.Identifier, M2.MatchedType == (Result<CityType>) -> Void {
+	        let matchers: [Cuckoo.ParameterMatcher<(CityType.Identifier, (Result<CityType>) -> Void)>] = [wrap(matchable: id) { $0.0 }, wrap(matchable: completion) { $0.1 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockCityRepository.self, method: "get(by: CityType.Identifier, completion: @escaping (Result<CityType>) -> Void)", parameterMatchers: matchers))
+	    }
+	    
 	    func getCities<M1: Cuckoo.Matchable>(with completion: M1) -> Cuckoo.ClassStubNoReturnFunction<((Result<[CityType]>) -> Void)> where M1.MatchedType == (Result<[CityType]>) -> Void {
 	        let matchers: [Cuckoo.ParameterMatcher<((Result<[CityType]>) -> Void)>] = [wrap(matchable: completion) { $0 }]
 	        return .init(stub: cuckoo_manager.createStub(for: MockCityRepository.self, method: "getCities(with: @escaping (Result<[CityType]>) -> Void)", parameterMatchers: matchers))
+	    }
+	    
+	    func getCities<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(by text: M1, completion: M2) -> Cuckoo.ClassStubNoReturnFunction<(String, (Result<[CityType]>) -> Void)> where M1.MatchedType == String, M2.MatchedType == (Result<[CityType]>) -> Void {
+	        let matchers: [Cuckoo.ParameterMatcher<(String, (Result<[CityType]>) -> Void)>] = [wrap(matchable: text) { $0.0 }, wrap(matchable: completion) { $0.1 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockCityRepository.self, method: "getCities(by: String, completion: @escaping (Result<[CityType]>) -> Void)", parameterMatchers: matchers))
 	    }
 	    
 	    func setCities<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(_ cities: M1, with completion: M2) -> Cuckoo.ClassStubNoReturnFunction<([CityType], (Result<Void>) -> Void)> where M1.MatchedType == [CityType], M2.MatchedType == (Result<Void>) -> Void {
@@ -1470,9 +1630,21 @@ import RealmSwift
 	
 	    
 	    @discardableResult
+	    func get<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(by id: M1, completion: M2) -> Cuckoo.__DoNotUse<(CityType.Identifier, (Result<CityType>) -> Void), Void> where M1.MatchedType == CityType.Identifier, M2.MatchedType == (Result<CityType>) -> Void {
+	        let matchers: [Cuckoo.ParameterMatcher<(CityType.Identifier, (Result<CityType>) -> Void)>] = [wrap(matchable: id) { $0.0 }, wrap(matchable: completion) { $0.1 }]
+	        return cuckoo_manager.verify("get(by: CityType.Identifier, completion: @escaping (Result<CityType>) -> Void)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
 	    func getCities<M1: Cuckoo.Matchable>(with completion: M1) -> Cuckoo.__DoNotUse<((Result<[CityType]>) -> Void), Void> where M1.MatchedType == (Result<[CityType]>) -> Void {
 	        let matchers: [Cuckoo.ParameterMatcher<((Result<[CityType]>) -> Void)>] = [wrap(matchable: completion) { $0 }]
 	        return cuckoo_manager.verify("getCities(with: @escaping (Result<[CityType]>) -> Void)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func getCities<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(by text: M1, completion: M2) -> Cuckoo.__DoNotUse<(String, (Result<[CityType]>) -> Void), Void> where M1.MatchedType == String, M2.MatchedType == (Result<[CityType]>) -> Void {
+	        let matchers: [Cuckoo.ParameterMatcher<(String, (Result<[CityType]>) -> Void)>] = [wrap(matchable: text) { $0.0 }, wrap(matchable: completion) { $0.1 }]
+	        return cuckoo_manager.verify("getCities(by: String, completion: @escaping (Result<[CityType]>) -> Void)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
 	    }
 	    
 	    @discardableResult
@@ -1490,7 +1662,15 @@ import RealmSwift
     
 
     
+     override func get(by id: CityType.Identifier, completion: @escaping (Result<CityType>) -> Void)   {
+        return DefaultValueRegistry.defaultValue(for: (Void).self)
+    }
+    
      override func getCities(with completion: @escaping (Result<[CityType]>) -> Void)   {
+        return DefaultValueRegistry.defaultValue(for: (Void).self)
+    }
+    
+     override func getCities(by text: String, completion: @escaping (Result<[CityType]>) -> Void)   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
     
@@ -2246,6 +2426,21 @@ import Foundation
         
     }
     
+    
+    
+     override func get(by text: String, completion: @escaping (Result<[CityType]>) -> Void)  {
+        
+    return cuckoo_manager.call("get(by: String, completion: @escaping (Result<[CityType]>) -> Void)",
+            parameters: (text, completion),
+            escapingParameters: (text, completion),
+            superclassCall:
+                
+                super.get(by: text, completion: completion)
+                ,
+            defaultCall: __defaultImplStub!.get(by: text, completion: completion))
+        
+    }
+    
 
 	 struct __StubbingProxy_GetCitiesUseCase: Cuckoo.StubbingProxy {
 	    private let cuckoo_manager: Cuckoo.MockManager
@@ -2258,6 +2453,11 @@ import Foundation
 	    func get<M1: Cuckoo.Matchable>(with completion: M1) -> Cuckoo.ClassStubNoReturnFunction<((Result<[CityType]>) -> Void)> where M1.MatchedType == (Result<[CityType]>) -> Void {
 	        let matchers: [Cuckoo.ParameterMatcher<((Result<[CityType]>) -> Void)>] = [wrap(matchable: completion) { $0 }]
 	        return .init(stub: cuckoo_manager.createStub(for: MockGetCitiesUseCase.self, method: "get(with: @escaping (Result<[CityType]>) -> Void)", parameterMatchers: matchers))
+	    }
+	    
+	    func get<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(by text: M1, completion: M2) -> Cuckoo.ClassStubNoReturnFunction<(String, (Result<[CityType]>) -> Void)> where M1.MatchedType == String, M2.MatchedType == (Result<[CityType]>) -> Void {
+	        let matchers: [Cuckoo.ParameterMatcher<(String, (Result<[CityType]>) -> Void)>] = [wrap(matchable: text) { $0.0 }, wrap(matchable: completion) { $0.1 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockGetCitiesUseCase.self, method: "get(by: String, completion: @escaping (Result<[CityType]>) -> Void)", parameterMatchers: matchers))
 	    }
 	    
 	}
@@ -2282,6 +2482,12 @@ import Foundation
 	        return cuckoo_manager.verify("get(with: @escaping (Result<[CityType]>) -> Void)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
 	    }
 	    
+	    @discardableResult
+	    func get<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(by text: M1, completion: M2) -> Cuckoo.__DoNotUse<(String, (Result<[CityType]>) -> Void), Void> where M1.MatchedType == String, M2.MatchedType == (Result<[CityType]>) -> Void {
+	        let matchers: [Cuckoo.ParameterMatcher<(String, (Result<[CityType]>) -> Void)>] = [wrap(matchable: text) { $0.0 }, wrap(matchable: completion) { $0.1 }]
+	        return cuckoo_manager.verify("get(by: String, completion: @escaping (Result<[CityType]>) -> Void)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
 	}
 }
 
@@ -2292,6 +2498,109 @@ import Foundation
 
     
      override func get(with completion: @escaping (Result<[CityType]>) -> Void)   {
+        return DefaultValueRegistry.defaultValue(for: (Void).self)
+    }
+    
+     override func get(by text: String, completion: @escaping (Result<[CityType]>) -> Void)   {
+        return DefaultValueRegistry.defaultValue(for: (Void).self)
+    }
+    
+}
+
+
+// MARK: - Mocks generated from file: Platform/UseCases/Platform.GetCityUseCase.swift
+
+import Cuckoo
+@testable import Platform
+
+import Domain
+import Foundation
+
+
+ class MockGetCityUseCase: Platform.GetCityUseCase, Cuckoo.ClassMock {
+    
+     typealias MocksType = Platform.GetCityUseCase
+    
+     typealias Stubbing = __StubbingProxy_GetCityUseCase
+     typealias Verification = __VerificationProxy_GetCityUseCase
+
+     let cuckoo_manager = Cuckoo.MockManager.preconfiguredManager ?? Cuckoo.MockManager(hasParent: true)
+
+    
+    private var __defaultImplStub: Platform.GetCityUseCase?
+
+     func enableDefaultImplementation(_ stub: Platform.GetCityUseCase) {
+        __defaultImplStub = stub
+        cuckoo_manager.enableDefaultStubImplementation()
+    }
+    
+
+    
+
+    
+
+    
+    
+    
+     override func get(by id: CityType.Identifier, completion: @escaping (Result<CityType>) -> Void)  {
+        
+    return cuckoo_manager.call("get(by: CityType.Identifier, completion: @escaping (Result<CityType>) -> Void)",
+            parameters: (id, completion),
+            escapingParameters: (id, completion),
+            superclassCall:
+                
+                super.get(by: id, completion: completion)
+                ,
+            defaultCall: __defaultImplStub!.get(by: id, completion: completion))
+        
+    }
+    
+
+	 struct __StubbingProxy_GetCityUseCase: Cuckoo.StubbingProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	
+	     init(manager: Cuckoo.MockManager) {
+	        self.cuckoo_manager = manager
+	    }
+	    
+	    
+	    func get<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(by id: M1, completion: M2) -> Cuckoo.ClassStubNoReturnFunction<(CityType.Identifier, (Result<CityType>) -> Void)> where M1.MatchedType == CityType.Identifier, M2.MatchedType == (Result<CityType>) -> Void {
+	        let matchers: [Cuckoo.ParameterMatcher<(CityType.Identifier, (Result<CityType>) -> Void)>] = [wrap(matchable: id) { $0.0 }, wrap(matchable: completion) { $0.1 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockGetCityUseCase.self, method: "get(by: CityType.Identifier, completion: @escaping (Result<CityType>) -> Void)", parameterMatchers: matchers))
+	    }
+	    
+	}
+
+	 struct __VerificationProxy_GetCityUseCase: Cuckoo.VerificationProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	    private let callMatcher: Cuckoo.CallMatcher
+	    private let sourceLocation: Cuckoo.SourceLocation
+	
+	     init(manager: Cuckoo.MockManager, callMatcher: Cuckoo.CallMatcher, sourceLocation: Cuckoo.SourceLocation) {
+	        self.cuckoo_manager = manager
+	        self.callMatcher = callMatcher
+	        self.sourceLocation = sourceLocation
+	    }
+	
+	    
+	
+	    
+	    @discardableResult
+	    func get<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(by id: M1, completion: M2) -> Cuckoo.__DoNotUse<(CityType.Identifier, (Result<CityType>) -> Void), Void> where M1.MatchedType == CityType.Identifier, M2.MatchedType == (Result<CityType>) -> Void {
+	        let matchers: [Cuckoo.ParameterMatcher<(CityType.Identifier, (Result<CityType>) -> Void)>] = [wrap(matchable: id) { $0.0 }, wrap(matchable: completion) { $0.1 }]
+	        return cuckoo_manager.verify("get(by: CityType.Identifier, completion: @escaping (Result<CityType>) -> Void)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	}
+}
+
+ class GetCityUseCaseStub: Platform.GetCityUseCase {
+    
+
+    
+
+    
+     override func get(by id: CityType.Identifier, completion: @escaping (Result<CityType>) -> Void)   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
     
@@ -2847,6 +3156,21 @@ public class MockUseCaseProvider: Platform.UseCaseProvider, Cuckoo.ClassMock {
     
     
     
+    public override func makeGetCityUseCase() -> Domain.GetCityUseCase {
+        
+    return cuckoo_manager.call("makeGetCityUseCase() -> Domain.GetCityUseCase",
+            parameters: (),
+            escapingParameters: (),
+            superclassCall:
+                
+                super.makeGetCityUseCase()
+                ,
+            defaultCall: __defaultImplStub!.makeGetCityUseCase())
+        
+    }
+    
+    
+    
     public override func makeSaveCitiesUseCase() -> Domain.SaveCitiesUseCase {
         
     return cuckoo_manager.call("makeSaveCitiesUseCase() -> Domain.SaveCitiesUseCase",
@@ -2892,6 +3216,11 @@ public class MockUseCaseProvider: Platform.UseCaseProvider, Cuckoo.ClassMock {
 	    func makeGetCitiesUseCase() -> Cuckoo.ClassStubFunction<(), Domain.GetCitiesUseCase> {
 	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
 	        return .init(stub: cuckoo_manager.createStub(for: MockUseCaseProvider.self, method: "makeGetCitiesUseCase() -> Domain.GetCitiesUseCase", parameterMatchers: matchers))
+	    }
+	    
+	    func makeGetCityUseCase() -> Cuckoo.ClassStubFunction<(), Domain.GetCityUseCase> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return .init(stub: cuckoo_manager.createStub(for: MockUseCaseProvider.self, method: "makeGetCityUseCase() -> Domain.GetCityUseCase", parameterMatchers: matchers))
 	    }
 	    
 	    func makeSaveCitiesUseCase() -> Cuckoo.ClassStubFunction<(), Domain.SaveCitiesUseCase> {
@@ -2946,6 +3275,12 @@ public class MockUseCaseProvider: Platform.UseCaseProvider, Cuckoo.ClassMock {
 	    }
 	    
 	    @discardableResult
+	    func makeGetCityUseCase() -> Cuckoo.__DoNotUse<(), Domain.GetCityUseCase> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return cuckoo_manager.verify("makeGetCityUseCase() -> Domain.GetCityUseCase", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
 	    func makeSaveCitiesUseCase() -> Cuckoo.__DoNotUse<(), Domain.SaveCitiesUseCase> {
 	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
 	        return cuckoo_manager.verify("makeSaveCitiesUseCase() -> Domain.SaveCitiesUseCase", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
@@ -2978,6 +3313,10 @@ public class UseCaseProviderStub: Platform.UseCaseProvider {
     
     public override func makeGetCitiesUseCase() -> Domain.GetCitiesUseCase  {
         return DefaultValueRegistry.defaultValue(for: (Domain.GetCitiesUseCase).self)
+    }
+    
+    public override func makeGetCityUseCase() -> Domain.GetCityUseCase  {
+        return DefaultValueRegistry.defaultValue(for: (Domain.GetCityUseCase).self)
     }
     
     public override func makeSaveCitiesUseCase() -> Domain.SaveCitiesUseCase  {

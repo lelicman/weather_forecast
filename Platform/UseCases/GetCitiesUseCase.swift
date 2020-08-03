@@ -11,4 +11,8 @@ class GetCitiesUseCase: Domain.GetCitiesUseCase {
   func get(with completion: @escaping (Result<[CityType]>) -> Void) {
     repository.getCities(with: completion)
   }
+
+  func get(by text: String, completion: @escaping (Result<[CityType]>) -> Void) {
+    repository.getCities(by: text, completion: completion)
+  }
 }
