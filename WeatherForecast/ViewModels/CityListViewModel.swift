@@ -40,14 +40,7 @@ class CityListViewModel: BaseViewModel, CityListViewModelType {
   }
 
   func load() {
-    post(CityListViewModelAction.isLoading(true))
-    getCitiesUseCase.get { [weak self] result in
-      DispatchQueue.main.async {
-        guard let self = self else { return }
-        self.post(CityListViewModelAction.isLoading(false))
-        self.items = self.converter.from(result.value ?? [])
-      }
-    }
+    search(by: "")
   }
 
   func select(item: CityPresentableModel) {
