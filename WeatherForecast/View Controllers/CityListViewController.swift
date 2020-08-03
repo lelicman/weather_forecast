@@ -97,15 +97,13 @@ extension CityListViewController: UITableViewDelegate {
 }
 
 extension CityListViewController: UISearchBarDelegate {
-  func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-    viewModel.search(by: searchText)
-  }
-
   func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
     searchBar.resignFirstResponder()
+    viewModel.search(by: searchBar.text ?? "")
   }
 
   func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
     searchBar.resignFirstResponder()
+    viewModel.search(by: searchBar.text ?? "")
   }
 }
