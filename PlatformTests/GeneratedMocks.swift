@@ -1,5 +1,6 @@
 //swiftlint:disable all
-// MARK: - Mocks generated from file: Domain/Models/Domain.City.swift
+// swiftlint:disable all
+// MARK: - Mocks generated from file: Domain/Models/Domain.Domain.City.swift
 
 import Cuckoo
 @testable import Platform
@@ -155,6 +156,7 @@ public class MockCityType: CityType, Cuckoo.ProtocolMock {
 }
 
 public class CityTypeStub: CityType {
+        
     
     
     public var id: Identifier {
@@ -163,6 +165,7 @@ public class CityTypeStub: CityType {
         }
         
     }
+        
     
     
     public var name: String {
@@ -171,6 +174,7 @@ public class CityTypeStub: CityType {
         }
         
     }
+        
     
     
     public var countryCode: String {
@@ -179,6 +183,7 @@ public class CityTypeStub: CityType {
         }
         
     }
+        
     
     
     public var coordinates: CoordinatesType {
@@ -195,7 +200,7 @@ public class CityTypeStub: CityType {
 }
 
 
-// MARK: - Mocks generated from file: Domain/Models/Domain.CityWeather.swift
+// MARK: - Mocks generated from file: Domain/Models/Domain.Domain.CityWeather.swift
 
 import Cuckoo
 @testable import Platform
@@ -423,6 +428,7 @@ public class MockCityWeatherType: CityWeatherType, Cuckoo.ProtocolMock {
 }
 
 public class CityWeatherTypeStub: CityWeatherType {
+        
     
     
     public var coordinates: CoordinatesType {
@@ -431,6 +437,7 @@ public class CityWeatherTypeStub: CityWeatherType {
         }
         
     }
+        
     
     
     public var temperature: Double {
@@ -439,6 +446,7 @@ public class CityWeatherTypeStub: CityWeatherType {
         }
         
     }
+        
     
     
     public var temperatureInCelsius: Double {
@@ -447,6 +455,7 @@ public class CityWeatherTypeStub: CityWeatherType {
         }
         
     }
+        
     
     
     public var temperatureInKelvins: Double {
@@ -455,6 +464,7 @@ public class CityWeatherTypeStub: CityWeatherType {
         }
         
     }
+        
     
     
     public var temperatureInFarenheits: Double {
@@ -463,6 +473,7 @@ public class CityWeatherTypeStub: CityWeatherType {
         }
         
     }
+        
     
     
     public var pressure: Double {
@@ -471,6 +482,7 @@ public class CityWeatherTypeStub: CityWeatherType {
         }
         
     }
+        
     
     
     public var humidity: Double {
@@ -487,7 +499,7 @@ public class CityWeatherTypeStub: CityWeatherType {
 }
 
 
-// MARK: - Mocks generated from file: Domain/Models/Domain.Coordinates.swift
+// MARK: - Mocks generated from file: Domain/Models/Domain.Domain.Coordinates.swift
 
 import Cuckoo
 @testable import Platform
@@ -595,6 +607,7 @@ public class MockCoordinatesType: CoordinatesType, Cuckoo.ProtocolMock {
 }
 
 public class CoordinatesTypeStub: CoordinatesType {
+        
     
     
     public var longtitude: Double {
@@ -603,6 +616,7 @@ public class CoordinatesTypeStub: CoordinatesType {
         }
         
     }
+        
     
     
     public var latitude: Double {
@@ -619,7 +633,7 @@ public class CoordinatesTypeStub: CoordinatesType {
 }
 
 
-// MARK: - Mocks generated from file: Platform/Converters/Platform.CityConverter.swift
+// MARK: - Mocks generated from file: Platform/Converters/Platform.Platform.CityConverter.swift
 
 import Cuckoo
 @testable import Platform
@@ -763,13 +777,19 @@ import Foundation
     
 
     
+    
+    
      func from(response: [CityResponse]) -> [CityType]  {
         return DefaultValueRegistry.defaultValue(for: ([CityType]).self)
     }
     
+    
+    
      func from(models: [RealmCity]) -> [CityType]  {
         return DefaultValueRegistry.defaultValue(for: ([CityType]).self)
     }
+    
+    
     
      func from(model: RealmCity) -> CityType  {
         return DefaultValueRegistry.defaultValue(for: (CityType).self)
@@ -779,9 +799,9 @@ import Foundation
 
 
 
- class MockCityConverter: Platform.CityConverter, Cuckoo.ClassMock {
+ class MockCityConverter: Platform.Platform.CityConverter, Cuckoo.ClassMock {
     
-     typealias MocksType = Platform.CityConverter
+     typealias MocksType = Platform.Platform.CityConverter
     
      typealias Stubbing = __StubbingProxy_CityConverter
      typealias Verification = __VerificationProxy_CityConverter
@@ -789,9 +809,9 @@ import Foundation
      let cuckoo_manager = Cuckoo.MockManager.preconfiguredManager ?? Cuckoo.MockManager(hasParent: true)
 
     
-    private var __defaultImplStub: Platform.CityConverter?
+    private var __defaultImplStub: Platform.Platform.CityConverter?
 
-     func enableDefaultImplementation(_ stub: Platform.CityConverter) {
+     func enableDefaultImplementation(_ stub: Platform.Platform.CityConverter) {
         __defaultImplStub = stub
         cuckoo_manager.enableDefaultStubImplementation()
     }
@@ -908,19 +928,25 @@ import Foundation
 	}
 }
 
- class CityConverterStub: Platform.CityConverter {
+ class CityConverterStub: Platform.Platform.CityConverter {
     
 
     
 
+    
+    
     
      override func from(response: [CityResponse]) -> [CityType]  {
         return DefaultValueRegistry.defaultValue(for: ([CityType]).self)
     }
     
+    
+    
      override func from(models: [RealmCity]) -> [CityType]  {
         return DefaultValueRegistry.defaultValue(for: ([CityType]).self)
     }
+    
+    
     
      override func from(model: RealmCity) -> CityType  {
         return DefaultValueRegistry.defaultValue(for: (CityType).self)
@@ -929,7 +955,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Platform/Converters/Platform.CityWeatherConverter.swift
+// MARK: - Mocks generated from file: Platform/Converters/Platform.Platform.CityWeatherConverter.swift
 
 import Cuckoo
 @testable import Platform
@@ -1021,6 +1047,8 @@ import Foundation
     
 
     
+    
+    
      func from(_ response: CityWeatherResponse) -> CityWeatherType  {
         return DefaultValueRegistry.defaultValue(for: (CityWeatherType).self)
     }
@@ -1029,9 +1057,9 @@ import Foundation
 
 
 
- class MockCityWeatherConverter: Platform.CityWeatherConverter, Cuckoo.ClassMock {
+ class MockCityWeatherConverter: Platform.Platform.CityWeatherConverter, Cuckoo.ClassMock {
     
-     typealias MocksType = Platform.CityWeatherConverter
+     typealias MocksType = Platform.Platform.CityWeatherConverter
     
      typealias Stubbing = __StubbingProxy_CityWeatherConverter
      typealias Verification = __VerificationProxy_CityWeatherConverter
@@ -1039,9 +1067,9 @@ import Foundation
      let cuckoo_manager = Cuckoo.MockManager.preconfiguredManager ?? Cuckoo.MockManager(hasParent: true)
 
     
-    private var __defaultImplStub: Platform.CityWeatherConverter?
+    private var __defaultImplStub: Platform.Platform.CityWeatherConverter?
 
-     func enableDefaultImplementation(_ stub: Platform.CityWeatherConverter) {
+     func enableDefaultImplementation(_ stub: Platform.Platform.CityWeatherConverter) {
         __defaultImplStub = stub
         cuckoo_manager.enableDefaultStubImplementation()
     }
@@ -1106,11 +1134,13 @@ import Foundation
 	}
 }
 
- class CityWeatherConverterStub: Platform.CityWeatherConverter {
+ class CityWeatherConverterStub: Platform.Platform.CityWeatherConverter {
     
 
     
 
+    
+    
     
      override func from(_ response: CityWeatherResponse) -> CityWeatherType  {
         return DefaultValueRegistry.defaultValue(for: (CityWeatherType).self)
@@ -1119,7 +1149,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Platform/Converters/Platform.RealmCityConverter.swift
+// MARK: - Mocks generated from file: Platform/Converters/Platform.Platform.RealmCityConverter.swift
 
 import Cuckoo
 @testable import Platform
@@ -1211,6 +1241,8 @@ import Foundation
     
 
     
+    
+    
      func from(_ cities: [CityType]) -> [RealmCity]  {
         return DefaultValueRegistry.defaultValue(for: ([RealmCity]).self)
     }
@@ -1219,9 +1251,9 @@ import Foundation
 
 
 
- class MockRealmCityConverter: Platform.RealmCityConverter, Cuckoo.ClassMock {
+ class MockRealmCityConverter: Platform.Platform.RealmCityConverter, Cuckoo.ClassMock {
     
-     typealias MocksType = Platform.RealmCityConverter
+     typealias MocksType = Platform.Platform.RealmCityConverter
     
      typealias Stubbing = __StubbingProxy_RealmCityConverter
      typealias Verification = __VerificationProxy_RealmCityConverter
@@ -1229,9 +1261,9 @@ import Foundation
      let cuckoo_manager = Cuckoo.MockManager.preconfiguredManager ?? Cuckoo.MockManager(hasParent: true)
 
     
-    private var __defaultImplStub: Platform.RealmCityConverter?
+    private var __defaultImplStub: Platform.Platform.RealmCityConverter?
 
-     func enableDefaultImplementation(_ stub: Platform.RealmCityConverter) {
+     func enableDefaultImplementation(_ stub: Platform.Platform.RealmCityConverter) {
         __defaultImplStub = stub
         cuckoo_manager.enableDefaultStubImplementation()
     }
@@ -1296,11 +1328,13 @@ import Foundation
 	}
 }
 
- class RealmCityConverterStub: Platform.RealmCityConverter {
+ class RealmCityConverterStub: Platform.Platform.RealmCityConverter {
     
 
     
 
+    
+    
     
      override func from(_ cities: [CityType]) -> [RealmCity]  {
         return DefaultValueRegistry.defaultValue(for: ([RealmCity]).self)
@@ -1309,7 +1343,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Platform/Repositories/Platform.CityRepository.swift
+// MARK: - Mocks generated from file: Platform/Repositories/Platform.Platform.CityRepository.swift
 
 import Cuckoo
 @testable import Platform
@@ -1481,17 +1515,25 @@ import RealmSwift
     
 
     
+    
+    
      func getCities(with completion: @escaping (Result<[CityType]>) -> Void)   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
+    
+    
     
      func getCities(by text: String, completion: @escaping (Result<[CityType]>) -> Void)   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
     
+    
+    
      func setCities(_ cities: [CityType], with completion: @escaping (Result<Void>) -> Void)   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
+    
+    
     
      func get(by id: CityType.Identifier, completion: @escaping (Result<CityType>) -> Void)   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
@@ -1501,9 +1543,9 @@ import RealmSwift
 
 
 
- class MockCityRepository: Platform.CityRepository, Cuckoo.ClassMock {
+ class MockCityRepository: Platform.Platform.CityRepository, Cuckoo.ClassMock {
     
-     typealias MocksType = Platform.CityRepository
+     typealias MocksType = Platform.Platform.CityRepository
     
      typealias Stubbing = __StubbingProxy_CityRepository
      typealias Verification = __VerificationProxy_CityRepository
@@ -1511,9 +1553,9 @@ import RealmSwift
      let cuckoo_manager = Cuckoo.MockManager.preconfiguredManager ?? Cuckoo.MockManager(hasParent: true)
 
     
-    private var __defaultImplStub: Platform.CityRepository?
+    private var __defaultImplStub: Platform.Platform.CityRepository?
 
-     func enableDefaultImplementation(_ stub: Platform.CityRepository) {
+     func enableDefaultImplementation(_ stub: Platform.Platform.CityRepository) {
         __defaultImplStub = stub
         cuckoo_manager.enableDefaultStubImplementation()
     }
@@ -1656,23 +1698,31 @@ import RealmSwift
 	}
 }
 
- class CityRepositoryStub: Platform.CityRepository {
+ class CityRepositoryStub: Platform.Platform.CityRepository {
     
 
     
 
+    
+    
     
      override func get(by id: CityType.Identifier, completion: @escaping (Result<CityType>) -> Void)   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
     
+    
+    
      override func getCities(with completion: @escaping (Result<[CityType]>) -> Void)   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
     
+    
+    
      override func getCities(by text: String, completion: @escaping (Result<[CityType]>) -> Void)   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
+    
+    
     
      override func setCities(_ cities: [CityType], with completion: @escaping (Result<Void>) -> Void)   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
@@ -1681,7 +1731,7 @@ import RealmSwift
 }
 
 
-// MARK: - Mocks generated from file: Platform/Repositories/Platform.ImportCityRepository.swift
+// MARK: - Mocks generated from file: Platform/Repositories/Platform.Platform.ImportCityRepository.swift
 
 import Cuckoo
 @testable import Platform
@@ -1773,6 +1823,8 @@ import Foundation
     
 
     
+    
+    
      func getCities(with completion: @escaping (Result<[CityType]>) -> Void)   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
@@ -1781,9 +1833,9 @@ import Foundation
 
 
 
- class MockImportCityRepository: Platform.ImportCityRepository, Cuckoo.ClassMock {
+ class MockImportCityRepository: Platform.Platform.ImportCityRepository, Cuckoo.ClassMock {
     
-     typealias MocksType = Platform.ImportCityRepository
+     typealias MocksType = Platform.Platform.ImportCityRepository
     
      typealias Stubbing = __StubbingProxy_ImportCityRepository
      typealias Verification = __VerificationProxy_ImportCityRepository
@@ -1791,9 +1843,9 @@ import Foundation
      let cuckoo_manager = Cuckoo.MockManager.preconfiguredManager ?? Cuckoo.MockManager(hasParent: true)
 
     
-    private var __defaultImplStub: Platform.ImportCityRepository?
+    private var __defaultImplStub: Platform.Platform.ImportCityRepository?
 
-     func enableDefaultImplementation(_ stub: Platform.ImportCityRepository) {
+     func enableDefaultImplementation(_ stub: Platform.Platform.ImportCityRepository) {
         __defaultImplStub = stub
         cuckoo_manager.enableDefaultStubImplementation()
     }
@@ -1858,11 +1910,13 @@ import Foundation
 	}
 }
 
- class ImportCityRepositoryStub: Platform.ImportCityRepository {
+ class ImportCityRepositoryStub: Platform.Platform.ImportCityRepository {
     
 
     
 
+    
+    
     
      override func getCities(with completion: @escaping (Result<[CityType]>) -> Void)   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
@@ -1871,7 +1925,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Platform/Repositories/Platform.SettingsRepository.swift
+// MARK: - Mocks generated from file: Platform/Repositories/Platform.Platform.SettingsRepository.swift
 
 import Cuckoo
 @testable import Platform
@@ -1966,6 +2020,7 @@ import Foundation
 }
 
  class SettingsRepositoryProtocolStub: SettingsRepositoryProtocol {
+        
     
     
      var areCitiesImported: Bool {
@@ -1985,9 +2040,9 @@ import Foundation
 
 
 
- class MockSettingsRepository: Platform.SettingsRepository, Cuckoo.ClassMock {
+ class MockSettingsRepository: Platform.Platform.SettingsRepository, Cuckoo.ClassMock {
     
-     typealias MocksType = Platform.SettingsRepository
+     typealias MocksType = Platform.Platform.SettingsRepository
     
      typealias Stubbing = __StubbingProxy_SettingsRepository
      typealias Verification = __VerificationProxy_SettingsRepository
@@ -1995,9 +2050,9 @@ import Foundation
      let cuckoo_manager = Cuckoo.MockManager.preconfiguredManager ?? Cuckoo.MockManager(hasParent: true)
 
     
-    private var __defaultImplStub: Platform.SettingsRepository?
+    private var __defaultImplStub: Platform.Platform.SettingsRepository?
 
-     func enableDefaultImplementation(_ stub: Platform.SettingsRepository) {
+     func enableDefaultImplementation(_ stub: Platform.Platform.SettingsRepository) {
         __defaultImplStub = stub
         cuckoo_manager.enableDefaultStubImplementation()
     }
@@ -2070,7 +2125,8 @@ import Foundation
 	}
 }
 
- class SettingsRepositoryStub: Platform.SettingsRepository {
+ class SettingsRepositoryStub: Platform.Platform.SettingsRepository {
+        
     
     
      override var areCitiesImported: Bool {
@@ -2089,7 +2145,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Platform/Repositories/Platform.WeatherRepository.swift
+// MARK: - Mocks generated from file: Platform/Repositories/Platform.Platform.WeatherRepository.swift
 
 import Cuckoo
 @testable import Platform
@@ -2124,9 +2180,9 @@ import Moya
     
     
     
-     func get(with cityId: Domain.City.Identifier, completion: @escaping (Result<CityWeatherType>) -> Void)  {
+     func get(with cityId: Domain.Domain.City.Identifier, completion: @escaping (Result<CityWeatherType>) -> Void)  {
         
-    return cuckoo_manager.call("get(with: Domain.City.Identifier, completion: @escaping (Result<CityWeatherType>) -> Void)",
+    return cuckoo_manager.call("get(with: Domain.Domain.City.Identifier, completion: @escaping (Result<CityWeatherType>) -> Void)",
             parameters: (cityId, completion),
             escapingParameters: (cityId, completion),
             superclassCall:
@@ -2146,9 +2202,9 @@ import Moya
 	    }
 	    
 	    
-	    func get<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(with cityId: M1, completion: M2) -> Cuckoo.ProtocolStubNoReturnFunction<(Domain.City.Identifier, (Result<CityWeatherType>) -> Void)> where M1.MatchedType == Domain.City.Identifier, M2.MatchedType == (Result<CityWeatherType>) -> Void {
-	        let matchers: [Cuckoo.ParameterMatcher<(Domain.City.Identifier, (Result<CityWeatherType>) -> Void)>] = [wrap(matchable: cityId) { $0.0 }, wrap(matchable: completion) { $0.1 }]
-	        return .init(stub: cuckoo_manager.createStub(for: MockWeatherRepositoryProtocol.self, method: "get(with: Domain.City.Identifier, completion: @escaping (Result<CityWeatherType>) -> Void)", parameterMatchers: matchers))
+	    func get<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(with cityId: M1, completion: M2) -> Cuckoo.ProtocolStubNoReturnFunction<(Domain.Domain.City.Identifier, (Result<CityWeatherType>) -> Void)> where M1.MatchedType == Domain.Domain.City.Identifier, M2.MatchedType == (Result<CityWeatherType>) -> Void {
+	        let matchers: [Cuckoo.ParameterMatcher<(Domain.Domain.City.Identifier, (Result<CityWeatherType>) -> Void)>] = [wrap(matchable: cityId) { $0.0 }, wrap(matchable: completion) { $0.1 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockWeatherRepositoryProtocol.self, method: "get(with: Domain.Domain.City.Identifier, completion: @escaping (Result<CityWeatherType>) -> Void)", parameterMatchers: matchers))
 	    }
 	    
 	}
@@ -2168,9 +2224,9 @@ import Moya
 	
 	    
 	    @discardableResult
-	    func get<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(with cityId: M1, completion: M2) -> Cuckoo.__DoNotUse<(Domain.City.Identifier, (Result<CityWeatherType>) -> Void), Void> where M1.MatchedType == Domain.City.Identifier, M2.MatchedType == (Result<CityWeatherType>) -> Void {
-	        let matchers: [Cuckoo.ParameterMatcher<(Domain.City.Identifier, (Result<CityWeatherType>) -> Void)>] = [wrap(matchable: cityId) { $0.0 }, wrap(matchable: completion) { $0.1 }]
-	        return cuckoo_manager.verify("get(with: Domain.City.Identifier, completion: @escaping (Result<CityWeatherType>) -> Void)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    func get<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(with cityId: M1, completion: M2) -> Cuckoo.__DoNotUse<(Domain.Domain.City.Identifier, (Result<CityWeatherType>) -> Void), Void> where M1.MatchedType == Domain.Domain.City.Identifier, M2.MatchedType == (Result<CityWeatherType>) -> Void {
+	        let matchers: [Cuckoo.ParameterMatcher<(Domain.Domain.City.Identifier, (Result<CityWeatherType>) -> Void)>] = [wrap(matchable: cityId) { $0.0 }, wrap(matchable: completion) { $0.1 }]
+	        return cuckoo_manager.verify("get(with: Domain.Domain.City.Identifier, completion: @escaping (Result<CityWeatherType>) -> Void)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
 	    }
 	    
 	}
@@ -2182,7 +2238,9 @@ import Moya
     
 
     
-     func get(with cityId: Domain.City.Identifier, completion: @escaping (Result<CityWeatherType>) -> Void)   {
+    
+    
+     func get(with cityId: Domain.Domain.City.Identifier, completion: @escaping (Result<CityWeatherType>) -> Void)   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
     
@@ -2190,9 +2248,9 @@ import Moya
 
 
 
- class MockWeatherRepository: Platform.WeatherRepository, Cuckoo.ClassMock {
+ class MockWeatherRepository: Platform.Platform.WeatherRepository, Cuckoo.ClassMock {
     
-     typealias MocksType = Platform.WeatherRepository
+     typealias MocksType = Platform.Platform.WeatherRepository
     
      typealias Stubbing = __StubbingProxy_WeatherRepository
      typealias Verification = __VerificationProxy_WeatherRepository
@@ -2200,9 +2258,9 @@ import Moya
      let cuckoo_manager = Cuckoo.MockManager.preconfiguredManager ?? Cuckoo.MockManager(hasParent: true)
 
     
-    private var __defaultImplStub: Platform.WeatherRepository?
+    private var __defaultImplStub: Platform.Platform.WeatherRepository?
 
-     func enableDefaultImplementation(_ stub: Platform.WeatherRepository) {
+     func enableDefaultImplementation(_ stub: Platform.Platform.WeatherRepository) {
         __defaultImplStub = stub
         cuckoo_manager.enableDefaultStubImplementation()
     }
@@ -2215,9 +2273,9 @@ import Moya
     
     
     
-     override func get(with cityId: Domain.City.Identifier, completion: @escaping (Result<CityWeatherType>) -> Void)  {
+     override func get(with cityId: Domain.Domain.City.Identifier, completion: @escaping (Result<CityWeatherType>) -> Void)  {
         
-    return cuckoo_manager.call("get(with: Domain.City.Identifier, completion: @escaping (Result<CityWeatherType>) -> Void)",
+    return cuckoo_manager.call("get(with: Domain.Domain.City.Identifier, completion: @escaping (Result<CityWeatherType>) -> Void)",
             parameters: (cityId, completion),
             escapingParameters: (cityId, completion),
             superclassCall:
@@ -2237,9 +2295,9 @@ import Moya
 	    }
 	    
 	    
-	    func get<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(with cityId: M1, completion: M2) -> Cuckoo.ClassStubNoReturnFunction<(Domain.City.Identifier, (Result<CityWeatherType>) -> Void)> where M1.MatchedType == Domain.City.Identifier, M2.MatchedType == (Result<CityWeatherType>) -> Void {
-	        let matchers: [Cuckoo.ParameterMatcher<(Domain.City.Identifier, (Result<CityWeatherType>) -> Void)>] = [wrap(matchable: cityId) { $0.0 }, wrap(matchable: completion) { $0.1 }]
-	        return .init(stub: cuckoo_manager.createStub(for: MockWeatherRepository.self, method: "get(with: Domain.City.Identifier, completion: @escaping (Result<CityWeatherType>) -> Void)", parameterMatchers: matchers))
+	    func get<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(with cityId: M1, completion: M2) -> Cuckoo.ClassStubNoReturnFunction<(Domain.Domain.City.Identifier, (Result<CityWeatherType>) -> Void)> where M1.MatchedType == Domain.Domain.City.Identifier, M2.MatchedType == (Result<CityWeatherType>) -> Void {
+	        let matchers: [Cuckoo.ParameterMatcher<(Domain.Domain.City.Identifier, (Result<CityWeatherType>) -> Void)>] = [wrap(matchable: cityId) { $0.0 }, wrap(matchable: completion) { $0.1 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockWeatherRepository.self, method: "get(with: Domain.Domain.City.Identifier, completion: @escaping (Result<CityWeatherType>) -> Void)", parameterMatchers: matchers))
 	    }
 	    
 	}
@@ -2259,28 +2317,30 @@ import Moya
 	
 	    
 	    @discardableResult
-	    func get<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(with cityId: M1, completion: M2) -> Cuckoo.__DoNotUse<(Domain.City.Identifier, (Result<CityWeatherType>) -> Void), Void> where M1.MatchedType == Domain.City.Identifier, M2.MatchedType == (Result<CityWeatherType>) -> Void {
-	        let matchers: [Cuckoo.ParameterMatcher<(Domain.City.Identifier, (Result<CityWeatherType>) -> Void)>] = [wrap(matchable: cityId) { $0.0 }, wrap(matchable: completion) { $0.1 }]
-	        return cuckoo_manager.verify("get(with: Domain.City.Identifier, completion: @escaping (Result<CityWeatherType>) -> Void)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    func get<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(with cityId: M1, completion: M2) -> Cuckoo.__DoNotUse<(Domain.Domain.City.Identifier, (Result<CityWeatherType>) -> Void), Void> where M1.MatchedType == Domain.Domain.City.Identifier, M2.MatchedType == (Result<CityWeatherType>) -> Void {
+	        let matchers: [Cuckoo.ParameterMatcher<(Domain.Domain.City.Identifier, (Result<CityWeatherType>) -> Void)>] = [wrap(matchable: cityId) { $0.0 }, wrap(matchable: completion) { $0.1 }]
+	        return cuckoo_manager.verify("get(with: Domain.Domain.City.Identifier, completion: @escaping (Result<CityWeatherType>) -> Void)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
 	    }
 	    
 	}
 }
 
- class WeatherRepositoryStub: Platform.WeatherRepository {
+ class WeatherRepositoryStub: Platform.Platform.WeatherRepository {
     
 
     
 
     
-     override func get(with cityId: Domain.City.Identifier, completion: @escaping (Result<CityWeatherType>) -> Void)   {
+    
+    
+     override func get(with cityId: Domain.Domain.City.Identifier, completion: @escaping (Result<CityWeatherType>) -> Void)   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
     
 }
 
 
-// MARK: - Mocks generated from file: Platform/UseCases/Platform.GetCitiesImportedUseCase.swift
+// MARK: - Mocks generated from file: Platform/UseCases/Platform.Platform.GetCitiesImportedUseCase.swift
 
 import Cuckoo
 @testable import Platform
@@ -2289,9 +2349,9 @@ import Domain
 import Foundation
 
 
- class MockGetCitiesImportedUseCase: Platform.GetCitiesImportedUseCase, Cuckoo.ClassMock {
+ class MockGetCitiesImportedUseCase: Platform.Platform.GetCitiesImportedUseCase, Cuckoo.ClassMock {
     
-     typealias MocksType = Platform.GetCitiesImportedUseCase
+     typealias MocksType = Platform.Platform.GetCitiesImportedUseCase
     
      typealias Stubbing = __StubbingProxy_GetCitiesImportedUseCase
      typealias Verification = __VerificationProxy_GetCitiesImportedUseCase
@@ -2299,9 +2359,9 @@ import Foundation
      let cuckoo_manager = Cuckoo.MockManager.preconfiguredManager ?? Cuckoo.MockManager(hasParent: true)
 
     
-    private var __defaultImplStub: Platform.GetCitiesImportedUseCase?
+    private var __defaultImplStub: Platform.Platform.GetCitiesImportedUseCase?
 
-     func enableDefaultImplementation(_ stub: Platform.GetCitiesImportedUseCase) {
+     func enableDefaultImplementation(_ stub: Platform.Platform.GetCitiesImportedUseCase) {
         __defaultImplStub = stub
         cuckoo_manager.enableDefaultStubImplementation()
     }
@@ -2366,11 +2426,13 @@ import Foundation
 	}
 }
 
- class GetCitiesImportedUseCaseStub: Platform.GetCitiesImportedUseCase {
+ class GetCitiesImportedUseCaseStub: Platform.Platform.GetCitiesImportedUseCase {
     
 
     
 
+    
+    
     
      override func get() -> Bool  {
         return DefaultValueRegistry.defaultValue(for: (Bool).self)
@@ -2379,7 +2441,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Platform/UseCases/Platform.GetCitiesUseCase.swift
+// MARK: - Mocks generated from file: Platform/UseCases/Platform.Platform.GetCitiesUseCase.swift
 
 import Cuckoo
 @testable import Platform
@@ -2388,9 +2450,9 @@ import Domain
 import Foundation
 
 
- class MockGetCitiesUseCase: Platform.GetCitiesUseCase, Cuckoo.ClassMock {
+ class MockGetCitiesUseCase: Platform.Platform.GetCitiesUseCase, Cuckoo.ClassMock {
     
-     typealias MocksType = Platform.GetCitiesUseCase
+     typealias MocksType = Platform.Platform.GetCitiesUseCase
     
      typealias Stubbing = __StubbingProxy_GetCitiesUseCase
      typealias Verification = __VerificationProxy_GetCitiesUseCase
@@ -2398,9 +2460,9 @@ import Foundation
      let cuckoo_manager = Cuckoo.MockManager.preconfiguredManager ?? Cuckoo.MockManager(hasParent: true)
 
     
-    private var __defaultImplStub: Platform.GetCitiesUseCase?
+    private var __defaultImplStub: Platform.Platform.GetCitiesUseCase?
 
-     func enableDefaultImplementation(_ stub: Platform.GetCitiesUseCase) {
+     func enableDefaultImplementation(_ stub: Platform.Platform.GetCitiesUseCase) {
         __defaultImplStub = stub
         cuckoo_manager.enableDefaultStubImplementation()
     }
@@ -2491,15 +2553,19 @@ import Foundation
 	}
 }
 
- class GetCitiesUseCaseStub: Platform.GetCitiesUseCase {
+ class GetCitiesUseCaseStub: Platform.Platform.GetCitiesUseCase {
     
 
     
 
+    
+    
     
      override func get(with completion: @escaping (Result<[CityType]>) -> Void)   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
+    
+    
     
      override func get(by text: String, completion: @escaping (Result<[CityType]>) -> Void)   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
@@ -2508,7 +2574,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Platform/UseCases/Platform.GetCityUseCase.swift
+// MARK: - Mocks generated from file: Platform/UseCases/Platform.Platform.GetCityUseCase.swift
 
 import Cuckoo
 @testable import Platform
@@ -2517,9 +2583,9 @@ import Domain
 import Foundation
 
 
- class MockGetCityUseCase: Platform.GetCityUseCase, Cuckoo.ClassMock {
+ class MockGetCityUseCase: Platform.Platform.GetCityUseCase, Cuckoo.ClassMock {
     
-     typealias MocksType = Platform.GetCityUseCase
+     typealias MocksType = Platform.Platform.GetCityUseCase
     
      typealias Stubbing = __StubbingProxy_GetCityUseCase
      typealias Verification = __VerificationProxy_GetCityUseCase
@@ -2527,9 +2593,9 @@ import Foundation
      let cuckoo_manager = Cuckoo.MockManager.preconfiguredManager ?? Cuckoo.MockManager(hasParent: true)
 
     
-    private var __defaultImplStub: Platform.GetCityUseCase?
+    private var __defaultImplStub: Platform.Platform.GetCityUseCase?
 
-     func enableDefaultImplementation(_ stub: Platform.GetCityUseCase) {
+     func enableDefaultImplementation(_ stub: Platform.Platform.GetCityUseCase) {
         __defaultImplStub = stub
         cuckoo_manager.enableDefaultStubImplementation()
     }
@@ -2594,11 +2660,13 @@ import Foundation
 	}
 }
 
- class GetCityUseCaseStub: Platform.GetCityUseCase {
+ class GetCityUseCaseStub: Platform.Platform.GetCityUseCase {
     
 
     
 
+    
+    
     
      override func get(by id: CityType.Identifier, completion: @escaping (Result<CityType>) -> Void)   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
@@ -2607,7 +2675,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Platform/UseCases/Platform.GetCityWeatherUseCase.swift
+// MARK: - Mocks generated from file: Platform/UseCases/Platform.Platform.GetCityWeatherUseCase.swift
 
 import Cuckoo
 @testable import Platform
@@ -2616,9 +2684,9 @@ import Domain
 import Foundation
 
 
- class MockGetCityWeatherUseCase: Platform.GetCityWeatherUseCase, Cuckoo.ClassMock {
+ class MockGetCityWeatherUseCase: Platform.Platform.GetCityWeatherUseCase, Cuckoo.ClassMock {
     
-     typealias MocksType = Platform.GetCityWeatherUseCase
+     typealias MocksType = Platform.Platform.GetCityWeatherUseCase
     
      typealias Stubbing = __StubbingProxy_GetCityWeatherUseCase
      typealias Verification = __VerificationProxy_GetCityWeatherUseCase
@@ -2626,9 +2694,9 @@ import Foundation
      let cuckoo_manager = Cuckoo.MockManager.preconfiguredManager ?? Cuckoo.MockManager(hasParent: true)
 
     
-    private var __defaultImplStub: Platform.GetCityWeatherUseCase?
+    private var __defaultImplStub: Platform.Platform.GetCityWeatherUseCase?
 
-     func enableDefaultImplementation(_ stub: Platform.GetCityWeatherUseCase) {
+     func enableDefaultImplementation(_ stub: Platform.Platform.GetCityWeatherUseCase) {
         __defaultImplStub = stub
         cuckoo_manager.enableDefaultStubImplementation()
     }
@@ -2641,9 +2709,9 @@ import Foundation
     
     
     
-     override func get(with cityId: Domain.City.Identifier, completion: @escaping (Result<CityWeatherType>) -> Void)  {
+     override func get(with cityId: Domain.Domain.City.Identifier, completion: @escaping (Result<CityWeatherType>) -> Void)  {
         
-    return cuckoo_manager.call("get(with: Domain.City.Identifier, completion: @escaping (Result<CityWeatherType>) -> Void)",
+    return cuckoo_manager.call("get(with: Domain.Domain.City.Identifier, completion: @escaping (Result<CityWeatherType>) -> Void)",
             parameters: (cityId, completion),
             escapingParameters: (cityId, completion),
             superclassCall:
@@ -2663,9 +2731,9 @@ import Foundation
 	    }
 	    
 	    
-	    func get<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(with cityId: M1, completion: M2) -> Cuckoo.ClassStubNoReturnFunction<(Domain.City.Identifier, (Result<CityWeatherType>) -> Void)> where M1.MatchedType == Domain.City.Identifier, M2.MatchedType == (Result<CityWeatherType>) -> Void {
-	        let matchers: [Cuckoo.ParameterMatcher<(Domain.City.Identifier, (Result<CityWeatherType>) -> Void)>] = [wrap(matchable: cityId) { $0.0 }, wrap(matchable: completion) { $0.1 }]
-	        return .init(stub: cuckoo_manager.createStub(for: MockGetCityWeatherUseCase.self, method: "get(with: Domain.City.Identifier, completion: @escaping (Result<CityWeatherType>) -> Void)", parameterMatchers: matchers))
+	    func get<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(with cityId: M1, completion: M2) -> Cuckoo.ClassStubNoReturnFunction<(Domain.Domain.City.Identifier, (Result<CityWeatherType>) -> Void)> where M1.MatchedType == Domain.Domain.City.Identifier, M2.MatchedType == (Result<CityWeatherType>) -> Void {
+	        let matchers: [Cuckoo.ParameterMatcher<(Domain.Domain.City.Identifier, (Result<CityWeatherType>) -> Void)>] = [wrap(matchable: cityId) { $0.0 }, wrap(matchable: completion) { $0.1 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockGetCityWeatherUseCase.self, method: "get(with: Domain.Domain.City.Identifier, completion: @escaping (Result<CityWeatherType>) -> Void)", parameterMatchers: matchers))
 	    }
 	    
 	}
@@ -2685,28 +2753,30 @@ import Foundation
 	
 	    
 	    @discardableResult
-	    func get<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(with cityId: M1, completion: M2) -> Cuckoo.__DoNotUse<(Domain.City.Identifier, (Result<CityWeatherType>) -> Void), Void> where M1.MatchedType == Domain.City.Identifier, M2.MatchedType == (Result<CityWeatherType>) -> Void {
-	        let matchers: [Cuckoo.ParameterMatcher<(Domain.City.Identifier, (Result<CityWeatherType>) -> Void)>] = [wrap(matchable: cityId) { $0.0 }, wrap(matchable: completion) { $0.1 }]
-	        return cuckoo_manager.verify("get(with: Domain.City.Identifier, completion: @escaping (Result<CityWeatherType>) -> Void)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    func get<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable>(with cityId: M1, completion: M2) -> Cuckoo.__DoNotUse<(Domain.Domain.City.Identifier, (Result<CityWeatherType>) -> Void), Void> where M1.MatchedType == Domain.Domain.City.Identifier, M2.MatchedType == (Result<CityWeatherType>) -> Void {
+	        let matchers: [Cuckoo.ParameterMatcher<(Domain.Domain.City.Identifier, (Result<CityWeatherType>) -> Void)>] = [wrap(matchable: cityId) { $0.0 }, wrap(matchable: completion) { $0.1 }]
+	        return cuckoo_manager.verify("get(with: Domain.Domain.City.Identifier, completion: @escaping (Result<CityWeatherType>) -> Void)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
 	    }
 	    
 	}
 }
 
- class GetCityWeatherUseCaseStub: Platform.GetCityWeatherUseCase {
+ class GetCityWeatherUseCaseStub: Platform.Platform.GetCityWeatherUseCase {
     
 
     
 
     
-     override func get(with cityId: Domain.City.Identifier, completion: @escaping (Result<CityWeatherType>) -> Void)   {
+    
+    
+     override func get(with cityId: Domain.Domain.City.Identifier, completion: @escaping (Result<CityWeatherType>) -> Void)   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
     
 }
 
 
-// MARK: - Mocks generated from file: Platform/UseCases/Platform.ImportCitiesUseCase.swift
+// MARK: - Mocks generated from file: Platform/UseCases/Platform.Platform.ImportCitiesUseCase.swift
 
 import Cuckoo
 @testable import Platform
@@ -2715,9 +2785,9 @@ import Domain
 import Foundation
 
 
- class MockImportCitiesUseCase: Platform.ImportCitiesUseCase, Cuckoo.ClassMock {
+ class MockImportCitiesUseCase: Platform.Platform.ImportCitiesUseCase, Cuckoo.ClassMock {
     
-     typealias MocksType = Platform.ImportCitiesUseCase
+     typealias MocksType = Platform.Platform.ImportCitiesUseCase
     
      typealias Stubbing = __StubbingProxy_ImportCitiesUseCase
      typealias Verification = __VerificationProxy_ImportCitiesUseCase
@@ -2725,9 +2795,9 @@ import Foundation
      let cuckoo_manager = Cuckoo.MockManager.preconfiguredManager ?? Cuckoo.MockManager(hasParent: true)
 
     
-    private var __defaultImplStub: Platform.ImportCitiesUseCase?
+    private var __defaultImplStub: Platform.Platform.ImportCitiesUseCase?
 
-     func enableDefaultImplementation(_ stub: Platform.ImportCitiesUseCase) {
+     func enableDefaultImplementation(_ stub: Platform.Platform.ImportCitiesUseCase) {
         __defaultImplStub = stub
         cuckoo_manager.enableDefaultStubImplementation()
     }
@@ -2792,11 +2862,13 @@ import Foundation
 	}
 }
 
- class ImportCitiesUseCaseStub: Platform.ImportCitiesUseCase {
+ class ImportCitiesUseCaseStub: Platform.Platform.ImportCitiesUseCase {
     
 
     
 
+    
+    
     
      override func get(with completion: @escaping (Result<Void>) -> Void)   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
@@ -2805,7 +2877,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Platform/UseCases/Platform.SaveCitiesUseCase.swift
+// MARK: - Mocks generated from file: Platform/UseCases/Platform.Platform.SaveCitiesUseCase.swift
 
 import Cuckoo
 @testable import Platform
@@ -2814,9 +2886,9 @@ import Domain
 import Foundation
 
 
- class MockSaveCitiesUseCase: Platform.SaveCitiesUseCase, Cuckoo.ClassMock {
+ class MockSaveCitiesUseCase: Platform.Platform.SaveCitiesUseCase, Cuckoo.ClassMock {
     
-     typealias MocksType = Platform.SaveCitiesUseCase
+     typealias MocksType = Platform.Platform.SaveCitiesUseCase
     
      typealias Stubbing = __StubbingProxy_SaveCitiesUseCase
      typealias Verification = __VerificationProxy_SaveCitiesUseCase
@@ -2824,9 +2896,9 @@ import Foundation
      let cuckoo_manager = Cuckoo.MockManager.preconfiguredManager ?? Cuckoo.MockManager(hasParent: true)
 
     
-    private var __defaultImplStub: Platform.SaveCitiesUseCase?
+    private var __defaultImplStub: Platform.Platform.SaveCitiesUseCase?
 
-     func enableDefaultImplementation(_ stub: Platform.SaveCitiesUseCase) {
+     func enableDefaultImplementation(_ stub: Platform.Platform.SaveCitiesUseCase) {
         __defaultImplStub = stub
         cuckoo_manager.enableDefaultStubImplementation()
     }
@@ -2891,11 +2963,13 @@ import Foundation
 	}
 }
 
- class SaveCitiesUseCaseStub: Platform.SaveCitiesUseCase {
+ class SaveCitiesUseCaseStub: Platform.Platform.SaveCitiesUseCase {
     
 
     
 
+    
+    
     
      override func save(cities: [CityType], with completion: @escaping (Result<Void>) -> Void)   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
@@ -2904,7 +2978,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Platform/UseCases/Platform.SetCitiesImportedUseCase.swift
+// MARK: - Mocks generated from file: Platform/UseCases/Platform.Platform.SetCitiesImportedUseCase.swift
 
 import Cuckoo
 @testable import Platform
@@ -2913,9 +2987,9 @@ import Domain
 import Foundation
 
 
- class MockSetCitiesImportedUseCase: Platform.SetCitiesImportedUseCase, Cuckoo.ClassMock {
+ class MockSetCitiesImportedUseCase: Platform.Platform.SetCitiesImportedUseCase, Cuckoo.ClassMock {
     
-     typealias MocksType = Platform.SetCitiesImportedUseCase
+     typealias MocksType = Platform.Platform.SetCitiesImportedUseCase
     
      typealias Stubbing = __StubbingProxy_SetCitiesImportedUseCase
      typealias Verification = __VerificationProxy_SetCitiesImportedUseCase
@@ -2923,9 +2997,9 @@ import Foundation
      let cuckoo_manager = Cuckoo.MockManager.preconfiguredManager ?? Cuckoo.MockManager(hasParent: true)
 
     
-    private var __defaultImplStub: Platform.SetCitiesImportedUseCase?
+    private var __defaultImplStub: Platform.Platform.SetCitiesImportedUseCase?
 
-     func enableDefaultImplementation(_ stub: Platform.SetCitiesImportedUseCase) {
+     func enableDefaultImplementation(_ stub: Platform.Platform.SetCitiesImportedUseCase) {
         __defaultImplStub = stub
         cuckoo_manager.enableDefaultStubImplementation()
     }
@@ -3024,7 +3098,8 @@ import Foundation
 	}
 }
 
- class SetCitiesImportedUseCaseStub: Platform.SetCitiesImportedUseCase {
+ class SetCitiesImportedUseCaseStub: Platform.Platform.SetCitiesImportedUseCase {
+        
     
     
      override var repository: SettingsRepositoryProtocol {
@@ -3040,6 +3115,8 @@ import Foundation
     
 
     
+    
+    
      override func set(_ value: Bool)   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
@@ -3047,7 +3124,7 @@ import Foundation
 }
 
 
-// MARK: - Mocks generated from file: Platform/UseCases/Platform.UseCaseProvider.swift
+// MARK: - Mocks generated from file: Platform/UseCases/Platform.Platform.UseCaseProvider.swift
 
 import Cuckoo
 @testable import Platform
@@ -3056,9 +3133,9 @@ import Domain
 import Foundation
 
 
-public class MockUseCaseProvider: Platform.UseCaseProvider, Cuckoo.ClassMock {
+public class MockUseCaseProvider: Platform.Platform.UseCaseProvider, Cuckoo.ClassMock {
     
-    public typealias MocksType = Platform.UseCaseProvider
+    public typealias MocksType = Platform.Platform.UseCaseProvider
     
     public typealias Stubbing = __StubbingProxy_UseCaseProvider
     public typealias Verification = __VerificationProxy_UseCaseProvider
@@ -3066,9 +3143,9 @@ public class MockUseCaseProvider: Platform.UseCaseProvider, Cuckoo.ClassMock {
     public let cuckoo_manager = Cuckoo.MockManager.preconfiguredManager ?? Cuckoo.MockManager(hasParent: true)
 
     
-    private var __defaultImplStub: Platform.UseCaseProvider?
+    private var __defaultImplStub: Platform.Platform.UseCaseProvider?
 
-    public func enableDefaultImplementation(_ stub: Platform.UseCaseProvider) {
+    public func enableDefaultImplementation(_ stub: Platform.Platform.UseCaseProvider) {
         __defaultImplStub = stub
         cuckoo_manager.enableDefaultStubImplementation()
     }
@@ -3289,35 +3366,49 @@ public class MockUseCaseProvider: Platform.UseCaseProvider, Cuckoo.ClassMock {
 	}
 }
 
-public class UseCaseProviderStub: Platform.UseCaseProvider {
+public class UseCaseProviderStub: Platform.Platform.UseCaseProvider {
     
 
     
 
+    
+    
     
     public override func makeImportCitiesUseCase() -> Domain.ImportCitiesUseCase  {
         return DefaultValueRegistry.defaultValue(for: (Domain.ImportCitiesUseCase).self)
     }
     
+    
+    
     public override func makeGetCityWeatherUseCase() -> Domain.GetCityWeatherUseCase  {
         return DefaultValueRegistry.defaultValue(for: (Domain.GetCityWeatherUseCase).self)
     }
+    
+    
     
     public override func makeGetCitiesImportedUseCase() -> Domain.GetCitiesImportedUseCase  {
         return DefaultValueRegistry.defaultValue(for: (Domain.GetCitiesImportedUseCase).self)
     }
     
+    
+    
     public override func makeSetCitiesImportedUseCase() -> Domain.SetCitiesImportedUseCase  {
         return DefaultValueRegistry.defaultValue(for: (Domain.SetCitiesImportedUseCase).self)
     }
+    
+    
     
     public override func makeGetCitiesUseCase() -> Domain.GetCitiesUseCase  {
         return DefaultValueRegistry.defaultValue(for: (Domain.GetCitiesUseCase).self)
     }
     
+    
+    
     public override func makeGetCityUseCase() -> Domain.GetCityUseCase  {
         return DefaultValueRegistry.defaultValue(for: (Domain.GetCityUseCase).self)
     }
+    
+    
     
     public override func makeSaveCitiesUseCase() -> Domain.SaveCitiesUseCase  {
         return DefaultValueRegistry.defaultValue(for: (Domain.SaveCitiesUseCase).self)

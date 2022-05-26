@@ -1,7 +1,7 @@
 import Domain
 import Foundation
 
-//swiftlint:disable identifier_name
+// swiftlint:disable identifier_name
 struct MainWeatherResponse: Codable {
   let temp: Double
   let feels_like: Double

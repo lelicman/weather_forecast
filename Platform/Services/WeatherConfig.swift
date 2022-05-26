@@ -15,6 +15,6 @@ struct WeatherConfig {
   static let url = "https://api.openweathermap.org/data/2.5"
 
   static func defaultProvider<TargetType>() -> MoyaProvider<TargetType> {
-    return MoyaProvider(manager: Manager(), plugins: [])
+    return MoyaProvider()
   }
 }
