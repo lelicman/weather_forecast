@@ -30,7 +30,7 @@ class Coordinator: CoordinatorType {
   }
 
   func childCompleted(_ coordinator: Coordinator) {
-    if let index = childCoordinators.index(where: { $0 === coordinator }) {
+    if let index = childCoordinators.firstIndex(where: { $0 === coordinator }) {
       childCoordinators.remove(at: index)
     }
   }

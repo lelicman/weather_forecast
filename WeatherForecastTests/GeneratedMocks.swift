@@ -90,6 +90,8 @@ public class GetCitiesImportedUseCaseStub: Domain.GetCitiesImportedUseCase {
     
 
     
+    
+    
     public func get() -> Bool  {
         return DefaultValueRegistry.defaultValue(for: (Bool).self)
     }
@@ -214,9 +216,13 @@ public class GetCitiesUseCaseStub: Domain.GetCitiesUseCase {
     
 
     
+    
+    
     public func get(with completion: @escaping (Result<[CityType]>) -> Void)   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
+    
+    
     
     public func get(by text: String, completion: @escaping (Result<[CityType]>) -> Void)   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
@@ -316,6 +322,8 @@ public class GetCityWeatherUseCaseStub: Domain.GetCityWeatherUseCase {
     
 
     
+    
+    
     public func get(with cityId: City.Identifier, completion: @escaping (Result<CityWeatherType>) -> Void)   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
@@ -413,6 +421,8 @@ public class ImportCitiesUseCaseStub: Domain.ImportCitiesUseCase {
 
     
 
+    
+    
     
     public func get(with completion: @escaping (Result<Void>) -> Void)   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
@@ -512,6 +522,8 @@ public class SaveCitiesUseCaseStub: Domain.SaveCitiesUseCase {
     
 
     
+    
+    
     public func save(cities: [CityType], with completion: @escaping (Result<Void>) -> Void)   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
@@ -609,6 +621,8 @@ public class SetCitiesImportedUseCaseStub: Domain.SetCitiesImportedUseCase {
 
     
 
+    
+    
     
     public func set(_ value: Bool)   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
@@ -864,29 +878,43 @@ public class UseCaseProviderStub: Domain.UseCaseProvider {
     
 
     
+    
+    
     public func makeImportCitiesUseCase() -> Domain.ImportCitiesUseCase  {
         return DefaultValueRegistry.defaultValue(for: (Domain.ImportCitiesUseCase).self)
     }
+    
+    
     
     public func makeGetCityWeatherUseCase() -> Domain.GetCityWeatherUseCase  {
         return DefaultValueRegistry.defaultValue(for: (Domain.GetCityWeatherUseCase).self)
     }
     
+    
+    
     public func makeGetCitiesImportedUseCase() -> Domain.GetCitiesImportedUseCase  {
         return DefaultValueRegistry.defaultValue(for: (Domain.GetCitiesImportedUseCase).self)
     }
+    
+    
     
     public func makeSetCitiesImportedUseCase() -> Domain.SetCitiesImportedUseCase  {
         return DefaultValueRegistry.defaultValue(for: (Domain.SetCitiesImportedUseCase).self)
     }
     
+    
+    
     public func makeGetCitiesUseCase() -> Domain.GetCitiesUseCase  {
         return DefaultValueRegistry.defaultValue(for: (Domain.GetCitiesUseCase).self)
     }
     
+    
+    
     public func makeGetCityUseCase() -> GetCityUseCase  {
         return DefaultValueRegistry.defaultValue(for: (GetCityUseCase).self)
     }
+    
+    
     
     public func makeSaveCitiesUseCase() -> Domain.SaveCitiesUseCase  {
         return DefaultValueRegistry.defaultValue(for: (Domain.SaveCitiesUseCase).self)
@@ -987,6 +1015,8 @@ import Foundation
     
 
     
+    
+    
      func from(_ cities: [CityType]) -> [CityPresentableModel]  {
         return DefaultValueRegistry.defaultValue(for: ([CityPresentableModel]).self)
     }
@@ -1085,6 +1115,8 @@ import Foundation
 
     
 
+    
+    
     
      func from(_ weather: CityWeatherType) -> CityWeatherPresentableModel  {
         return DefaultValueRegistry.defaultValue(for: (CityWeatherPresentableModel).self)
@@ -1237,13 +1269,19 @@ import Foundation
     
 
     
+    
+    
      func makeViewModel() -> CityListViewModelType  {
         return DefaultValueRegistry.defaultValue(for: (CityListViewModelType).self)
     }
     
+    
+    
      func makeViewController(viewModel: CityListViewModelType) -> CityListViewController  {
         return DefaultValueRegistry.defaultValue(for: (CityListViewController).self)
     }
+    
+    
     
      func makeCityDetailsCoordinator(navigationController: UINavigationController, delegate: CityDetailsCoordinatorDelegate) -> CityDetailsCoordinator  {
         return DefaultValueRegistry.defaultValue(for: (CityDetailsCoordinator).self)
@@ -1388,13 +1426,19 @@ import Foundation
     
 
     
+    
+    
      override func makeViewModel() -> CityListViewModelType  {
         return DefaultValueRegistry.defaultValue(for: (CityListViewModelType).self)
     }
     
+    
+    
      override func makeViewController(viewModel: CityListViewModelType) -> CityListViewController  {
         return DefaultValueRegistry.defaultValue(for: (CityListViewController).self)
     }
+    
+    
     
      override func makeCityDetailsCoordinator(navigationController: UINavigationController, delegate: CityDetailsCoordinatorDelegate) -> CityDetailsCoordinator  {
         return DefaultValueRegistry.defaultValue(for: (CityDetailsCoordinator).self)
@@ -1521,9 +1565,13 @@ import Foundation
     
 
     
+    
+    
      func makeSplashCoordinator(window: UIWindow, delegate: SplashCoordinatorDelegate) -> WeatherForecast.SplashCoordinator  {
         return DefaultValueRegistry.defaultValue(for: (WeatherForecast.SplashCoordinator).self)
     }
+    
+    
     
      func makeCityListCoordinator(navigationController: UINavigationController) -> WeatherForecast.CityListCoordinator  {
         return DefaultValueRegistry.defaultValue(for: (WeatherForecast.CityListCoordinator).self)
@@ -1642,9 +1690,13 @@ import Foundation
     
 
     
+    
+    
      override func makeSplashCoordinator(window: UIWindow, delegate: SplashCoordinatorDelegate) -> WeatherForecast.SplashCoordinator  {
         return DefaultValueRegistry.defaultValue(for: (WeatherForecast.SplashCoordinator).self)
     }
+    
+    
     
      override func makeCityListCoordinator(navigationController: UINavigationController) -> WeatherForecast.CityListCoordinator  {
         return DefaultValueRegistry.defaultValue(for: (WeatherForecast.CityListCoordinator).self)
@@ -1771,9 +1823,13 @@ import Foundation
     
 
     
+    
+    
      func makeViewModel() -> SplashViewModelType  {
         return DefaultValueRegistry.defaultValue(for: (SplashViewModelType).self)
     }
+    
+    
     
      func makeViewController(viewModel: SplashViewModelType) -> SplashViewController  {
         return DefaultValueRegistry.defaultValue(for: (SplashViewController).self)
@@ -1892,9 +1948,13 @@ import Foundation
     
 
     
+    
+    
      override func makeViewModel() -> SplashViewModelType  {
         return DefaultValueRegistry.defaultValue(for: (SplashViewModelType).self)
     }
+    
+    
     
      override func makeViewController(viewModel: SplashViewModelType) -> SplashViewController  {
         return DefaultValueRegistry.defaultValue(for: (SplashViewController).self)
@@ -1996,6 +2056,8 @@ import UIKit
     
 
     
+    
+    
      override func start()   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
@@ -2094,6 +2156,8 @@ import Foundation
 
     
 
+    
+    
     
      func splashCoordinatorCompleted(coordinator: WeatherForecast.SplashCoordinator)   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
@@ -2215,6 +2279,7 @@ import Foundation
 }
 
  class SplashCoordinatorStub: WeatherForecast.SplashCoordinator {
+        
     
     
      override var delegate: Delegate? {
@@ -2229,6 +2294,8 @@ import Foundation
 
     
 
+    
+    
     
      override func start()   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
@@ -2467,17 +2534,25 @@ import Foundation
     
 
     
+    
+    
      func bind(_ object: AnyObject, _ handler: @escaping ActionHandler)   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
+    
+    
     
      func postInitialActions()   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
     
+    
+    
      func unbind(_ object: AnyObject)   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
+    
+    
     
      func post(_ action: Actionable)   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
@@ -2674,21 +2749,31 @@ import Foundation
     
 
     
+    
+    
      override func bind(_ object: AnyObject, _ handler: @escaping ActionHandler)   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
+    
+    
     
      override func postInitialActions()   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
     
+    
+    
      override func unbind(_ object: AnyObject)   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
     
+    
+    
      override func post(_ action: Actionable)   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
+    
+    
     
      override func post(_ action: Actionable, to object: AnyObject)   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
@@ -2893,21 +2978,31 @@ import Foundation
     
 
     
+    
+    
      func load()   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
+    
+    
     
      func bind(_ object: AnyObject, _ handler: @escaping ActionHandler)   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
     
+    
+    
      func postInitialActions()   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
     
+    
+    
      func unbind(_ object: AnyObject)   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
+    
+    
     
      func post(_ action: Actionable)   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
@@ -3130,25 +3225,37 @@ import Foundation
     
 
     
+    
+    
      override func postInitialActions()   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
+    
+    
     
      override func load()   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
     
+    
+    
      override func bind(_ object: AnyObject, _ handler: @escaping ActionHandler)   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
+    
+    
     
      override func unbind(_ object: AnyObject)   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
     
+    
+    
      override func post(_ action: Actionable)   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
+    
+    
     
      override func post(_ action: Actionable, to object: AnyObject)   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)

@@ -1,42 +1,40 @@
 PODS:
-  - Alamofire (4.9.1)
-  - Cuckoo (1.3.2):
-    - Cuckoo/Swift (= 1.3.2)
-  - Cuckoo/Swift (1.3.2)
-  - Moya (13.0.1):
-    - Moya/Core (= 13.0.1)
-  - Moya/Core (13.0.1):
-    - Alamofire (~> 4.1)
-    - Result (~> 4.1)
-  - Nimble (8.1.1)
+  - Alamofire (5.6.1)
+  - Cuckoo (1.7.1):
+    - Cuckoo/Swift (= 1.7.1)
+  - Cuckoo/Swift (1.7.1)
+  - Moya (15.0.0):
+    - Moya/Core (= 15.0.0)
+  - Moya/Core (15.0.0):
+    - Alamofire (~> 5.0)
+  - Nimble (10.0.0)
   - ObjcExceptionBridging (1.0.1):
     - ObjcExceptionBridging/ObjcExceptionBridging (= 1.0.1)
   - ObjcExceptionBridging/ObjcExceptionBridging (1.0.1)
-  - Quick (3.0.0)
-  - Realm (5.0.3):
-    - Realm/Headers (= 5.0.3)
-  - Realm/Headers (5.0.3)
-  - RealmSwift (5.0.3):
-    - Realm (= 5.0.3)
-  - Result (4.1.0)
+  - Quick (5.0.1)
+  - Realm (10.26.0):
+    - Realm/Headers (= 10.26.0)
+  - Realm/Headers (10.26.0)
+  - RealmSwift (10.26.0):
+    - Realm (= 10.26.0)
   - SVProgressHUD (2.2.5)
-  - SwiftLint (0.39.2)
-  - Wormholy (1.6.2)
+  - SwiftLint (0.47.1)
+  - Wormholy (1.6.5)
   - XCGLogger (7.0.1):
     - XCGLogger/Core (= 7.0.1)
   - XCGLogger/Core (7.0.1):
     - ObjcExceptionBridging
 
 DEPENDENCIES:
-  - Cuckoo (= 1.3.2)
-  - Moya (= 13.0.1)
-  - Nimble (= 8.1.1)
-  - Quick (= 3.0.0)
-  - RealmSwift (= 5.0.3)
-  - SVProgressHUD (= 2.2.5)
-  - SwiftLint (= 0.39.2)
-  - Wormholy (= 1.6.2)
-  - XCGLogger (= 7.0.1)
+  - Cuckoo
+  - Moya
+  - Nimble
+  - Quick
+  - RealmSwift
+  - SVProgressHUD
+  - SwiftLint
+  - Wormholy
+  - XCGLogger
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -48,27 +46,25 @@ SPEC REPOS:
     - Quick
     - Realm
     - RealmSwift
-    - Result
     - SVProgressHUD
     - SwiftLint
     - Wormholy
     - XCGLogger
 
 SPEC CHECKSUMS:
-  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
-  Cuckoo: 57f71c6616b6b08cd9fe27f803da056fb619ff3e
-  Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
-  Nimble: 5f8a2fb6fa343a7242dfdd9d42f7267419d464b2
+  Alamofire: 87bd8c952f9a4454320fce00d9cc3de57bcadaf5
+  Cuckoo: 9e258d68137c411df47c6390f72901d5276b4f03
+  Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
+  Nimble: 5316ef81a170ce87baf72dd961f22f89a602ff84
   ObjcExceptionBridging: c30e00eb3700467e695faeea30e26e18bd445001
-  Quick: 6d9559f40647bc4d510103842ef2fdd882d753e2
-  Realm: bfca1699b61b0b17c3a69ae0e648314eae91fbdb
-  RealmSwift: 493c9f089cd3893b3959007973c0e4f640906ba0
-  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
+  Quick: 749aa754fd1e7d984f2000fe051e18a3a9809179
+  Realm: 97bc2540088e1e88a4b2051ba4b8eac85be0039a
+  RealmSwift: 1bc3cbcb1681c5a9262df5883280123aa2d1d4cf
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
-  SwiftLint: 22ccbbe3b8008684be5955693bab135e0ed6a447
-  Wormholy: 5a186f877829e7d488963b09f204e0186b40c9a8
+  SwiftLint: f80f1be7fa96d30e0aa68e58d45d4ea1ccaac519
+  Wormholy: 3252bc3e55a1847ef9a0976c1377bd77bf3635fa
   XCGLogger: 1943831ef907df55108b0b18657953f868de973b
 
-PODFILE CHECKSUM: 7c7ad0ac4a5e130d15d8a5e05d0deb500513f353
+PODFILE CHECKSUM: b443a7abf38052f18150dda5eb2593c451214428
 
-COCOAPODS: 1.9.0
+COCOAPODS: 1.11.3

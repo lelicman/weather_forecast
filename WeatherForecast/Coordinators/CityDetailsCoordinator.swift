@@ -2,7 +2,7 @@ import Domain
 import Foundation
 import UIKit
 
-protocol CityDetailsCoordinatorDelegate: class {
+protocol CityDetailsCoordinatorDelegate: AnyObject {
   func coordinatorCompleted(coordinator: CityDetailsCoordinator)
 }
 

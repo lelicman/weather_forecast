@@ -1,7 +1,7 @@
 import Domain
 import Foundation
 
-protocol SplashCoordinatorDelegate: class {
+protocol SplashCoordinatorDelegate: AnyObject {
   func splashCoordinatorCompleted(coordinator: SplashCoordinator)
 }
 
